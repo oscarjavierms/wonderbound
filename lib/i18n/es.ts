@@ -100,19 +100,16 @@ export const es = {
       title: 'Lo que se llevan.',
       items: [
         {
-          quote: 'Volví con las mejores fotos de mi vida y con amigas para siempre.',
-          name: 'Andrea M.',
-          trip: 'Bolivia',
+          quote:
+            'Viajar con @Wonderbound_journeys es disfrutar a plenitud, es soñar con algo increíble y volverlo realidad, es sentirse seguro y complacido porque cada viaje parece adivinar tus expectativas. Gracias a Kelly por ponerle el alma a cada detalle para hacernos sentir que vale la pena conocer lo que hay más allá de nuestra cotidianidad, que vivir es disfrutar la vida en libertad. Si alguien quiere pasarlo increíble, péguese al parche, no se arrepentirá: ha sido mi mejor inversión y el mejor regalo que me he podido dar.',
+          name: 'Myriam V.',
+          trip: 'Experiencia Wonderbound',
         },
         {
-          quote: 'Todo fluyó. Solo tuve que mirar, sentir y dejarme llevar.',
-          name: 'Carolina R.',
-          trip: 'Bolivia',
-        },
-        {
-          quote: 'Kelly ve lo que tú no ves. Y luego te lo regala en una foto.',
-          name: 'Lucía P.',
-          trip: 'Bolivia',
+          quote:
+            '¡Una experiencia inolvidable en Perú! Mi viaje fue simplemente increíble, una experiencia llena de momentos mágicos y paisajes espectaculares. Me sentí acompañada en todo momento, no solo con la orientación durante los recorridos, sino también con la disposición y paciencia para ayudarme a capturar fotografías hermosas y conservar esos recuerdos tan especiales. Fue mucho más que un viaje: fue una aventura llena de emociones, aprendizaje y recuerdos inolvidables.',
+          name: 'Laura M.',
+          trip: 'Expedición Perú',
         },
       ],
     },
