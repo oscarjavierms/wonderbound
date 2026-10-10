@@ -6,7 +6,7 @@ import { photos } from '@/lib/site'
 export function Hero({ locale }: { locale: Locale }) {
   const dict = getDictionary(locale)
   return (
-    <section className="relative isolate flex min-h-svh items-end overflow-hidden text-white">
+    <section className="relative isolate flex h-svh min-h-[34rem] w-full items-end overflow-hidden text-white">
       <Photo
         src={photos.sunsetPurple.src}
         alt={dict.home.hero.imageAlt}

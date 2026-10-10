@@ -40,8 +40,23 @@ export function Header({ locale, labels }: HeaderProps) {
     { href: `/${locale}/about`, label: labels.about, active: rest.startsWith('/about') },
   ]
 
+  const { atTop, hidden } = useSmartNavbar(pathname)
+  const hasDarkHero = rest === '' || rest.startsWith('/bolivia-2027')
+  const transparent = atTop && !open
+  const lightText = transparent && hasDarkHero
+  const isHidden = hidden && !open
+
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-ink/5 bg-white/80 text-ink backdrop-blur-md">
+    <header
+      className={cn(
+        'fixed inset-x-0 top-0 z-50 w-full transition-[transform,background-color,color,box-shadow,backdrop-filter] duration-300 ease-out',
+        transparent
+          ? 'bg-transparent shadow-none'
+          : 'bg-white/80 shadow-sm backdrop-blur-md',
+        lightText ? 'text-white' : 'text-ink',
+        isHidden && '-translate-y-full',
+      )}
+    >
       <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between gap-4 px-5 md:h-20 md:px-8">
         <Link
           href={`/${locale}`}
@@ -49,7 +64,12 @@ export function Header({ locale, labels }: HeaderProps) {
           onClick={() => setOpen(false)}
         >
           <span className="font-display text-2xl tracking-tight md:text-[1.75rem]">Wonderbound</span>
-          <span className="eyebrow mt-1 text-[0.6rem] tracking-[0.38em] text-muted-foreground">
+          <span
+            className={cn(
+              'eyebrow mt-1 text-[0.6rem] tracking-[0.38em] transition-colors duration-300',
+              lightText ? 'text-white/75' : 'text-muted-foreground',
+            )}
+          >
             Journeys
           </span>
         </Link>
@@ -130,6 +150,62 @@ export function Header({ locale, labels }: HeaderProps) {
       )}
     </header>
   )
+}
+
+const TOP_THRESHOLD = 8
+const HIDE_AFTER = 120
+const SCROLL_DELTA = 6
+const REVEAL_ZONE = 72
+
+function useSmartNavbar(pathname: string) {
+  const [atTop, setAtTop] = useState(true)
+  const [hidden, setHidden] = useState(false)
+
+  useEffect(() => {
+    let lastY = window.scrollY
+    let ticking = false
+
+    const update = () => {
+      const y = window.scrollY
+      setAtTop(y <= TOP_THRESHOLD)
+      if (y <= HIDE_AFTER) {
+        setHidden(false)
+      } else if (y - lastY > SCROLL_DELTA) {
+        setHidden(true)
+      } else if (lastY - y > SCROLL_DELTA) {
+        setHidden(false)
+      }
+      if (Math.abs(y - lastY) > SCROLL_DELTA) lastY = y
+      ticking = false
+    }
+
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true
+        window.requestAnimationFrame(update)
+      }
+    }
+
+    const onPointerMove = (event: PointerEvent) => {
+      if (event.pointerType === 'mouse' && event.clientY <= REVEAL_ZONE) setHidden(false)
+    }
+
+    const onFocusIn = (event: FocusEvent) => {
+      if ((event.target as HTMLElement | null)?.closest('header')) setHidden(false)
+    }
+
+    update()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('pointermove', onPointerMove, { passive: true })
+    document.addEventListener('focusin', onFocusIn)
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('pointermove', onPointerMove)
+      document.removeEventListener('focusin', onFocusIn)
+    }
+  }, [pathname])
+
+  return { atTop, hidden }
 }
 
 function MobileLink({
