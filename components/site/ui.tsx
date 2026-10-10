@@ -71,7 +71,7 @@ export function Container({
 }
 
 export function Eyebrow({ className, children }: { className?: string; children: React.ReactNode }) {
-  return <p className={cn('eyebrow text-terracotta', className)}>{children}</p>
+  return <p className={cn('eyebrow text-muted-foreground', className)}>{children}</p>
 }
 
 export function Signature({ className, children }: { className?: string; children: React.ReactNode }) {

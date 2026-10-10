@@ -40,15 +40,15 @@
 
 :root {
   color-scheme: light;
-  --salt: oklch(0.965 0.012 85);
-  --sand: oklch(0.915 0.025 80);
-  --ink: oklch(0.2 0.05 275);
+  --salt: #fbfbfb;
+  --sand: #f3f3f3;
+  --ink: #111111;
   --terracotta: oklch(0.55 0.15 42);
   --dusk: oklch(0.45 0.1 305);
 
   --background: var(--salt);
   --foreground: var(--ink);
-  --card: oklch(0.985 0.008 85);
+  --card: #ffffff;
   --card-foreground: var(--ink);
   --popover: var(--card);
   --popover-foreground: var(--ink);
@@ -57,12 +57,12 @@
   --secondary: var(--sand);
   --secondary-foreground: var(--ink);
   --muted: var(--sand);
-  --muted-foreground: oklch(0.42 0.03 275);
+  --muted-foreground: oklch(0.46 0 0);
   --accent: var(--terracotta);
-  --accent-foreground: oklch(0.99 0.005 85);
+  --accent-foreground: #ffffff;
   --destructive: oklch(0.55 0.2 27);
-  --border: oklch(0.86 0.02 80);
-  --input: oklch(0.82 0.025 80);
+  --border: oklch(0.91 0 0);
+  --input: oklch(0.86 0 0);
   --ring: var(--terracotta);
   --radius: 0.5rem;
 }
@@ -80,7 +80,7 @@
   h1,
   h2,
   h3 {
-    @apply font-display font-medium tracking-tight text-balance;
+    @apply font-display font-normal tracking-tight text-balance;
   }
   ::selection {
     background: var(--terracotta);

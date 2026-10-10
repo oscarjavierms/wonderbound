@@ -1,7 +1,7 @@
 import { Photo } from '@/components/site/photo'
-import { ButtonLink, Container, Signature } from '@/components/site/ui'
+import { ButtonLink, Container } from '@/components/site/ui'
 import { getDictionary, type Locale } from '@/lib/i18n/config'
-import { href, photos, whatsappUrl } from '@/lib/site'
+import { photos, whatsappUrl } from '@/lib/site'
 
 type Props = {
   locale: Locale
@@ -20,21 +20,19 @@ export function ClosingCta({ locale, title, text, message }: Props) {
         className="absolute inset-0 -z-10"
         sizes="100vw"
       />
-      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-ink/65" />
-      <Container className="flex flex-col items-center py-24 text-center md:py-36">
-        <h2 className="max-w-3xl text-5xl md:text-7xl">{title ?? dict.home.closing.title}</h2>
-        <p className="mt-6 max-w-xl text-lg text-white/85">{text ?? dict.home.closing.text}</p>
-        <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-          <ButtonLink href={href(locale, 'bolivia')}>{dict.cta.discoverBolivia}</ButtonLink>
-          <ButtonLink
-            href={whatsappUrl(message ?? dict.whatsapp.general)}
-            external
-            variant="light"
-          >
-            {dict.cta.whatsapp}
-          </ButtonLink>
-        </div>
-        <Signature className="mt-12 text-white/90">{dict.signature}</Signature>
+      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-ink/60" />
+      <Container className="flex flex-col items-center py-28 text-center md:py-40">
+        <h2 className="max-w-2xl text-4xl leading-[1.05] md:text-6xl">
+          {title ?? dict.home.closing.title}
+        </h2>
+        <p className="mt-5 max-w-md text-lg text-white/85">{text ?? dict.home.closing.text}</p>
+        <ButtonLink
+          href={whatsappUrl(message ?? dict.whatsapp.general)}
+          external
+          className="mt-10"
+        >
+          {dict.cta.whatsapp}
+        </ButtonLink>
       </Container>
     </section>
   )

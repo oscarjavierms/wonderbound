@@ -19,11 +19,7 @@ export function href(locale: Locale, route: RouteKey, hash?: string) {
 // Datos consignados en contrato; verificar contra certificados vigentes antes de publicar.
 export const business = {
   tradeName: 'Wonderbound Journeys',
-  legalRepresentative: 'Kelly Johana Vega Niño',
-  nit: '1098730939-1',
   rnt: '300525',
-  address:
-    'Diagonal 19 #153B-10, Torre 1, apartamento 1303, Floridablanca, Santander, Colombia',
   email: 'dondeestakelly@gmail.com',
   whatsappNumber: '573189740603',
   whatsappDisplay: '+57 318 974 0603',
@@ -47,3 +43,10 @@ export const photos = {
   sunsetPurple: { src: '/images/sunset-purple.jpg' },
   salarWide: { src: '/images/salar-wide.jpg' },
 } as const
+
+export const destinationCards = [
+  { id: 'patagonia', src: '/images/dest-patagonia.png' },
+  { id: 'egipto', src: '/images/dest-egipto.png' },
+  { id: 'huayhuash', src: '/images/dest-huayhuash.png' },
+  { id: 'laponia', src: '/images/dest-laponia.png' },
+] as const

@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import { ClosingCta } from '@/components/site/closing-cta'
 import { PageHeader } from '@/components/site/page-header'
-import { Photo, PhotoPlaceholder } from '@/components/site/photo'
+import { Photo } from '@/components/site/photo'
 import { ButtonLink, Container, Eyebrow } from '@/components/site/ui'
 import { getDictionary, hasLocale } from '@/lib/i18n/config'
 import { pageMetadata } from '@/lib/metadata'
@@ -62,24 +62,6 @@ export default async function ExpeditionsPage({ params }: { params: Promise<{ la
               {dict.cta.notifyMe}
             </ButtonLink>
           </div>
-        </Container>
-      </section>
-
-      <section className="py-20 md:py-28">
-        <Container>
-          <Eyebrow>{ex.past.eyebrow}</Eyebrow>
-          <h2 className="mt-4 text-4xl md:text-5xl">{ex.past.title}</h2>
-          <ul className="mt-10 grid gap-6 md:grid-cols-2">
-            {ex.past.items.map((item) => (
-              <li key={item}>
-                <PhotoPlaceholder
-                  label={`${ex.past.label} · ${dict.photo.pending}`}
-                  caption={item}
-                  className="aspect-[16/10] w-full rounded-sm"
-                />
-              </li>
-            ))}
-          </ul>
         </Container>
       </section>
 
