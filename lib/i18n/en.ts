@@ -22,6 +22,8 @@ export const en: Dictionary = {
     destinations: 'Destinations',
     about: 'About Wonderbound',
     bolivia: 'Bolivia 2027',
+    boliviaMeta: 'March 2027 · 7 days',
+    activeDepartures: 'Active departures',
     openMenu: 'Open menu',
     closeMenu: 'Close menu',
     mainNav: 'Main navigation',
@@ -71,17 +73,53 @@ export const en: Dictionary = {
       imageAlt: 'White off-road vehicle reflected on the mirror-like water of the Uyuni Salt Flat.',
     },
     kelly: {
-      eyebrow: 'Kelly Vega',
-      title: 'Behind every journey, a point of view.',
+      eyebrow: 'The founder',
+      title: "Hi, I'm Kelly.",
       paragraphs: [
-        "I'm Kelly. Over eight years and 45 countries photographing travel.",
-        'I created Wonderbound to travel in good company and keep what we feel in every place.',
+        'Eight years and 45 countries behind the camera.',
+        'I created Wonderbound to travel in good company and come home with memories you can look at.',
       ],
       imageAlt: 'Kelly in a red-striped poncho looking up at the sky over the Uyuni Salt Flat.',
     },
     closing: {
       title: 'Your next story could begin here.',
       text: 'Message us and we will tell you everything.',
+    },
+    gallery: {
+      eyebrow: 'Gallery',
+      title: "You'll come home with photos like these.",
+      alts: [
+        'Starry sky over the Bolivian altiplano.',
+        'Traveler on the Uyuni Salt Flat under a pink sky.',
+        'Llama on the altiplano with mountains behind.',
+        'Steps carved in salt in the middle of the salt flat.',
+        'Rock formation in the Siloli desert.',
+        'Orange sunset over the mirror-like salt flat.',
+      ],
+    },
+    testimonials: {
+      eyebrow: 'Travelers',
+      title: 'What they take home.',
+      items: [
+        {
+          quote: 'I came back with the best photos of my life and friends for good.',
+          name: 'Andrea M.',
+          trip: 'Bolivia',
+        },
+        {
+          quote: 'Everything flowed. All I had to do was look, feel and let go.',
+          name: 'Carolina R.',
+          trip: 'Bolivia',
+        },
+        {
+          quote: "Kelly sees what you don't. Then she gives it back to you in a photo.",
+          name: 'Lucía P.',
+          trip: 'Bolivia',
+        },
+      ],
+    },
+    finale: {
+      title: 'Your next journey is waiting.',
     },
   },
   expeditions: {

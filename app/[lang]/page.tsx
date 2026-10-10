@@ -1,9 +1,10 @@
 import { notFound } from 'next/navigation'
 import { DestinationsTeaser } from '@/components/home/destinations-teaser'
+import { Finale } from '@/components/home/finale'
+import { Gallery } from '@/components/home/gallery'
 import { Hero } from '@/components/home/hero'
 import { KellySection } from '@/components/home/kelly'
-import { NextExpedition } from '@/components/home/next-expedition'
-import { ClosingCta } from '@/components/site/closing-cta'
+import { Testimonials } from '@/components/home/testimonials'
 import { hasLocale } from '@/lib/i18n/config'
 
 export default async function HomePage({ params }: { params: Promise<{ lang: string }> }) {
@@ -14,9 +15,10 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
     <>
       <Hero locale={lang} />
       <DestinationsTeaser locale={lang} />
-      <NextExpedition locale={lang} />
       <KellySection locale={lang} />
-      <ClosingCta locale={lang} />
+      <Gallery locale={lang} />
+      <Testimonials locale={lang} />
+      <Finale locale={lang} />
     </>
   )
 }

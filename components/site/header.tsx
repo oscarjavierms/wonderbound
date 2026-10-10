@@ -15,6 +15,8 @@ type HeaderProps = {
     about: string
     home: string
     bolivia: string
+    boliviaMeta: string
+    activeDepartures: string
     openMenu: string
     closeMenu: string
     mainNav: string
@@ -39,7 +41,7 @@ export function Header({ locale, labels }: HeaderProps) {
   ]
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-salt/95 text-ink backdrop-blur">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-ink/5 bg-white/80 text-ink backdrop-blur-md">
       <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between gap-4 px-5 md:h-20 md:px-8">
         <Link
           href={`/${locale}`}
@@ -52,18 +54,13 @@ export function Header({ locale, labels }: HeaderProps) {
           </span>
         </Link>
 
-        <nav aria-label={labels.mainNav} className="hidden items-center gap-9 lg:flex">
-          <Link
-            href={links[0].href}
-            aria-current={links[0].active ? 'page' : undefined}
-            className={cn(linkClass, links[0].active && 'border-current')}
-          >
-            {links[0].label}
-          </Link>
+        <nav aria-label={labels.mainNav} className="hidden items-center gap-10 lg:flex">
           <GroupDeparturesMenu
             locale={locale}
             label={labels.expeditions}
             boliviaLabel={labels.bolivia}
+            boliviaMeta={labels.boliviaMeta}
+            heading={labels.activeDepartures}
             active={onExpeditions}
             boliviaActive={rest.startsWith('/bolivia-2027')}
           />
@@ -100,9 +97,6 @@ export function Header({ locale, labels }: HeaderProps) {
           className="fixed inset-x-0 top-16 bottom-0 overflow-y-auto bg-salt px-5 pb-10 pt-6 md:top-20 lg:hidden"
         >
           <nav aria-label={labels.mainNav} className="flex flex-col">
-            <MobileLink href={links[0].href} active={links[0].active} onNavigate={() => setOpen(false)}>
-              {links[0].label}
-            </MobileLink>
             <MobileLink
               href={`/${locale}/expeditions`}
               active={rest.startsWith('/expeditions')}
@@ -114,9 +108,12 @@ export function Header({ locale, labels }: HeaderProps) {
               href={`/${locale}/bolivia-2027`}
               onClick={() => setOpen(false)}
               aria-current={rest.startsWith('/bolivia-2027') ? 'page' : undefined}
-              className="border-b border-border py-4 pl-6 text-lg text-muted-foreground"
+              className="flex items-baseline justify-between gap-4 border-b border-border py-4 pl-6"
             >
-              {labels.bolivia}
+              <span className="font-display text-2xl italic">{labels.bolivia}</span>
+              <span className="text-[0.65rem] uppercase tracking-[0.22em] text-muted-foreground">
+                {labels.boliviaMeta}
+              </span>
             </Link>
             {links.slice(1).map((link) => (
               <MobileLink
@@ -162,12 +159,16 @@ function GroupDeparturesMenu({
   locale,
   label,
   boliviaLabel,
+  boliviaMeta,
+  heading,
   active,
   boliviaActive,
 }: {
   locale: Locale
   label: string
   boliviaLabel: string
+  boliviaMeta: string
+  heading: string
   active: boolean
   boliviaActive: boolean
 }) {
@@ -229,19 +230,35 @@ function GroupDeparturesMenu({
       <div
         id="group-departures-menu"
         hidden={!open}
-        className="absolute left-1/2 top-full w-56 -translate-x-1/2 pt-4"
+        className="absolute left-1/2 top-full w-72 -translate-x-1/2 pt-5"
       >
-        <ul className="border border-border bg-white py-2 shadow-sm">
-          <li>
-            <Link
-              href={`/${locale}/bolivia-2027`}
-              aria-current={boliviaActive ? 'page' : undefined}
-              className="block px-5 py-3 font-display text-xl transition-colors hover:bg-sand focus-visible:bg-sand"
-            >
-              {boliviaLabel}
-            </Link>
-          </li>
-        </ul>
+        <div className="border border-ink/5 bg-white p-2 shadow-[0_24px_48px_-24px_rgba(17,17,17,0.18)]">
+          <p className="px-4 pb-2 pt-3 text-[0.65rem] font-medium uppercase tracking-[0.28em] text-muted-foreground">
+            {heading}
+          </p>
+          <ul>
+            <li>
+              <Link
+                href={`/${locale}/bolivia-2027`}
+                aria-current={boliviaActive ? 'page' : undefined}
+                className="group/item flex items-center justify-between gap-4 px-4 py-3 transition-colors hover:bg-salt focus-visible:bg-salt"
+              >
+                <span className="flex flex-col">
+                  <span className="font-display text-[1.65rem] leading-tight italic">
+                    {boliviaLabel}
+                  </span>
+                  <span className="mt-1 text-xs tracking-wider text-muted-foreground">
+                    {boliviaMeta}
+                  </span>
+                </span>
+                <ChevronDown
+                  aria-hidden="true"
+                  className="size-4 -rotate-90 opacity-0 transition-opacity group-hover/item:opacity-60"
+                />
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   )

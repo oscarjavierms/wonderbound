@@ -20,6 +20,8 @@ export const es = {
     destinations: 'Destinos',
     about: 'Sobre Wonderbound',
     bolivia: 'Bolivia 2027',
+    boliviaMeta: 'Marzo 2027 · 7 días',
+    activeDepartures: 'Salidas activas',
     openMenu: 'Abrir menú',
     closeMenu: 'Cerrar menú',
     mainNav: 'Navegación principal',
@@ -69,17 +71,53 @@ export const es = {
       imageAlt: 'Vehículo todoterreno blanco reflejado sobre el espejo de agua del Salar de Uyuni.',
     },
     kelly: {
-      eyebrow: 'Kelly Vega',
-      title: 'Detrás de cada viaje, una mirada.',
+      eyebrow: 'La fundadora',
+      title: 'Hola, soy Kelly.',
       paragraphs: [
-        'Soy Kelly. Más de ocho años y 45 países fotografiando viajes.',
-        'Creé Wonderbound para viajar en buena compañía y conservar lo que sentimos en cada lugar.',
+        'Ocho años y 45 países detrás de la cámara.',
+        'Creé Wonderbound para viajar en buena compañía y volver con recuerdos que se puedan mirar.',
       ],
       imageAlt: 'Kelly con poncho de rayas rojas mirando al cielo sobre el Salar de Uyuni.',
     },
     closing: {
       title: 'Tu próxima historia podría empezar aquí.',
       text: 'Escríbenos y te contamos todo.',
+    },
+    gallery: {
+      eyebrow: 'Galería',
+      title: 'Volverás con fotos como estas.',
+      alts: [
+        'Cielo estrellado sobre el altiplano boliviano.',
+        'Viajera sobre el Salar de Uyuni bajo un cielo rosado.',
+        'Llama en el altiplano con montañas al fondo.',
+        'Escalones tallados en sal en medio del salar.',
+        'Formación rocosa en el desierto de Siloli.',
+        'Atardecer naranja sobre el espejo de agua del salar.',
+      ],
+    },
+    testimonials: {
+      eyebrow: 'Viajeros',
+      title: 'Lo que se llevan.',
+      items: [
+        {
+          quote: 'Volví con las mejores fotos de mi vida y con amigas para siempre.',
+          name: 'Andrea M.',
+          trip: 'Bolivia',
+        },
+        {
+          quote: 'Todo fluyó. Solo tuve que mirar, sentir y dejarme llevar.',
+          name: 'Carolina R.',
+          trip: 'Bolivia',
+        },
+        {
+          quote: 'Kelly ve lo que tú no ves. Y luego te lo regala en una foto.',
+          name: 'Lucía P.',
+          trip: 'Bolivia',
+        },
+      ],
+    },
+    finale: {
+      title: 'El próximo viaje te espera.',
     },
   },
   expeditions: {
