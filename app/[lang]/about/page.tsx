@@ -1,7 +1,6 @@
 import { notFound } from 'next/navigation'
 import { ClosingCta } from '@/components/site/closing-cta'
 import { Photo } from '@/components/site/photo'
-import { Pillars } from '@/components/site/pillars'
 import { Container, Eyebrow } from '@/components/site/ui'
 import { getDictionary, hasLocale } from '@/lib/i18n/config'
 import { pageMetadata } from '@/lib/metadata'
@@ -63,7 +62,6 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
         </Container>
       </section>
 
-      <Pillars locale={lang} title={a.pillarsTitle} />
       <ClosingCta locale={lang} />
     </>
   )

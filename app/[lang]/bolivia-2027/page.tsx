@@ -2,7 +2,6 @@ import { Check, X } from 'lucide-react'
 import { notFound } from 'next/navigation'
 import { TrackView } from '@/components/analytics/track-view'
 import { ContactForm } from '@/components/site/contact-form'
-import { Faq } from '@/components/site/faq'
 import { Photo } from '@/components/site/photo'
 import { ButtonLink, Container, Eyebrow } from '@/components/site/ui'
 import { getDictionary, hasLocale } from '@/lib/i18n/config'
@@ -133,7 +132,10 @@ export default async function BoliviaPage({ params }: { params: Promise<{ lang: 
             ))}
           </ol>
           <p className="mt-8 max-w-3xl text-sm leading-relaxed text-muted-foreground">
-            {b.payments.note}
+            {b.payments.note}{' '}
+            <a href={href(lang, 'terms')} className="text-ink underline underline-offset-4">
+              {dict.footer.terms}
+            </a>
           </p>
         </Container>
       </section>
@@ -167,18 +169,6 @@ export default async function BoliviaPage({ params }: { params: Promise<{ lang: 
           </ul>
         </Container>
       </section>
-
-      <Faq
-        eyebrow={b.faq.eyebrow}
-        title={b.faq.title}
-        items={b.faq.items}
-        className="bg-sand"
-        footer={
-          <ButtonLink href={href(lang, 'terms')} variant="dark" arrow={false}>
-            {dict.footer.terms}
-          </ButtonLink>
-        }
-      />
 
       <ContactForm locale={lang} dict={dict} />
     </>

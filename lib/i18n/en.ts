@@ -7,7 +7,7 @@ export const en: Dictionary = {
     description:
       'Small-group expeditions to discover extraordinary places, with Kelly behind the camera. Next expedition: Bolivia 2027, March 22–28.',
     pages: {
-      expeditions: 'Expeditions',
+      expeditions: 'Group departures',
       destinations: 'Destinations',
       about: 'About Wonderbound',
       bolivia: 'Bolivia 2027: At the Height of Dreams',
@@ -18,7 +18,7 @@ export const en: Dictionary = {
   signature: 'Come wonder with us.',
   nav: {
     home: 'Home',
-    expeditions: 'Expeditions',
+    expeditions: 'Group departures',
     destinations: 'Destinations',
     about: 'About Wonderbound',
     bolivia: 'Bolivia 2027',
@@ -36,196 +36,112 @@ export const en: Dictionary = {
     exploreExpedition: 'Explore the expedition',
     knowOurStory: 'Read our story',
     exploreDestinations: 'Explore the destinations',
-    exploreExpeditions: 'Explore our expeditions',
+    exploreExpeditions: 'See group departures',
     whatsapp: 'Ask us on WhatsApp',
     reserve: 'Reserve your spot',
     notifyMe: 'Let me know about upcoming expeditions',
   },
   whatsapp: {
+    destination: 'Hi, I would like to hear about a future Wonderbound departure to {destination}.',
     floatingLabel: 'Message us on WhatsApp',
     general: 'Hi, I would like to learn more about the Wonderbound Journeys expeditions.',
     bolivia:
       'Hi, I would like more information about the Bolivia 2027 expedition: At the Height of Dreams.',
   },
-  photo: {
-    pending: 'Photo pending',
-    kellyPending: "Kelly's photo pending",
-  },
   home: {
     hero: {
       title: 'Journeys to live. Photos to remember.',
-      text: 'We create expeditions to discover extraordinary places, connect with the world and keep the moments that make each journey unique.',
+      text: 'Group expeditions to extraordinary places, with Kelly behind the camera.',
       imageAlt:
         'Silhouette of a woman in a hat on the Uyuni Salt Flat at sunset, reflected in the water.',
     },
-    approach: {
-      eyebrow: 'Our way of traveling',
-      title: "It's not just about arriving somewhere.",
-      text: 'We believe in journeys that take us beyond a photograph of a place. In pausing, looking closely, sharing the road and coming home with memories that hold something of what we felt there.',
-      imageAlt: 'Kelly in a red-striped poncho looking up at the sky over the Uyuni Salt Flat.',
+    destinations: {
+      eyebrow: 'Destinations',
+      title: 'Places that call to us.',
+      cta: 'See all destinations',
     },
     next: {
-      eyebrow: 'Next expedition',
+      eyebrow: 'Next departure',
       title: 'Bolivia: at the height of dreams.',
       dates: 'March 22–28, 2027',
       duration: '7 days / 6 nights',
       price: 'USD 1,385 per person',
-      deposit:
-        'Initial deposit: USD 300, applied to the total and subject to the contract and its cancellation policy.',
-      group: 'Small group',
       labels: { dates: 'Dates', duration: 'Duration', price: 'Price' },
-      description:
-        'An expedition through salt flats, high-Andean lagoons, deserts and high-altitude landscapes. A journey to discover Bolivia, share the road and keep the memories of an extraordinary experience, with Kelly behind the camera throughout the trip.',
-      imageAlt: 'A white off-road vehicle reflected on the mirror-like water of the Uyuni Salt Flat.',
-    },
-    pillars: {
-      eyebrow: 'What sets us apart',
-      items: [
-        {
-          title: 'Travel for real',
-          text: 'Expeditions designed to discover each destination with time, attention and curiosity, beyond a list of places to tick off.',
-        },
-        {
-          title: "Kelly's eye",
-          text: 'Photography is part of the experience. Kelly joins the journeys and captures moments, landscapes and memories worth keeping.',
-        },
-        {
-          title: 'Sharing the road',
-          text: 'Group journeys to discover new places, share experiences and create memories together.',
-        },
-        {
-          title: 'Time to discover',
-          text: 'A way of traveling that leaves room to observe, enjoy and connect with each place.',
-        },
-      ],
+      description: 'Salt flats, lagoons and high-altitude skies. A small group, with Kelly behind the camera.',
+      imageAlt: 'White off-road vehicle reflected on the mirror-like water of the Uyuni Salt Flat.',
     },
     kelly: {
       eyebrow: 'Kelly Vega',
       title: 'Behind every journey, a point of view.',
       paragraphs: [
-        "I'm Kelly.",
-        "For more than eight years I've been creating content and photographing journeys around the world. After visiting 45 countries, I'm certain of one thing: the world is too beautiful to stay only in our imagination.",
-        "I started by inspiring people to travel through my camera. Then came group trips to Peru and Mexico, and I realized that what I enjoy most isn't just showing a place, but living it with other people.",
-        "That's why I created Wonderbound Journeys: expeditions where photography and travel are part of the same experience.",
+        "I'm Kelly. Over eight years and 45 countries photographing travel.",
+        'I created Wonderbound to travel in good company and keep what we feel in every place.',
       ],
-    },
-    destinations: {
-      eyebrow: 'Destinations',
-      title: 'The world is full of places that call to us.',
-      text: 'A selection of destinations that spark curiosity and the urge to explore. Every place we have visited holds a story and can inspire the roads we will take tomorrow.',
-      captions: ['Bolivian Altiplano', 'Altiplano desert', 'Starry skies', 'Uyuni Salt Flat'],
-      alts: [
-        'A llama on green grass in front of reddish rock formations on the Bolivian Altiplano.',
-        'A wind-sculpted rock formation in the Bolivian Altiplano desert.',
-        'The Milky Way across a night sky full of stars.',
-        'Kelly on a staircase of salt blocks on the Uyuni Salt Flat.',
-      ],
-    },
-    stories: {
-      eyebrow: 'Stories we have already lived',
-      title: 'Memories are built together, too.',
-      text: 'Before Bolivia came our group trips to Peru and Mexico.',
-      items: ['Peru · Previous group trip', 'Mexico · Previous group trip'],
-    },
-    faq: {
-      eyebrow: 'Frequently asked questions',
-      title: 'Before your next adventure begins.',
-      items: [
-        {
-          q: 'How can I reserve an expedition?',
-          a: 'Message us on WhatsApp or use the form on the expedition page. For Bolivia 2027, the initial deposit is USD 300, applied to the total and subject to the contract and its cancellation policy. A reservation is only confirmed once the corresponding payment is received and the agency issues its confirmation.',
-        },
-        {
-          q: 'What does each trip include?',
-          a: "Each expedition's page details what is and isn't included. For Bolivia 2027, you'll find the full list on the expedition page.",
-        },
-        {
-          q: 'Can I travel solo or with someone?',
-          a: 'Expeditions are group journeys and spots are reserved per person. On Bolivia 2027, lodging is in shared rooms for two or three travelers, subject to availability; a single room carries an additional cost and is subject to availability.',
-        },
-        {
-          q: 'How do the photographs work during the trip?',
-          a: 'Kelly joins the expedition as photographer. On Bolivia 2027, each traveler receives ten professional digital photographs selected by Kelly; the full set of captured material and a private session are not included.',
-        },
-        {
-          q: 'Where can I get my questions answered?',
-          a: "Message us on WhatsApp or use the contact form on the expedition page. We'll help you find the information you need before you reserve.",
-        },
-      ],
-      more: 'Prefer to write to us directly?',
+      imageAlt: 'Kelly in a red-striped poncho looking up at the sky over the Uyuni Salt Flat.',
     },
     closing: {
       title: 'Your next story could begin here.',
-      text: 'The world has so much to discover. We lay out the road; you bring the desire to live it.',
+      text: 'Message us and we will tell you everything.',
     },
   },
   expeditions: {
-    eyebrow: 'Expeditions',
-    title: 'Expeditions designed to discover.',
-    intro:
-      'Each expedition is designed with intention: routes planned without rush, time to enjoy every place and Kelly behind the camera. Choose yours.',
+    eyebrow: 'Group departures',
+    title: 'Group departures.',
+    intro: 'Routes designed with calm, to discover every place without rushing.',
     available: 'Available',
     bolivia: {
-      title: 'Bolivia — At the Height of Dreams',
-      meta: 'March 22–28, 2027 · 7 days / 6 nights · USD 1,385 per person.',
-      text: 'An expedition through the extraordinary landscapes of the Bolivian Altiplano, with salt flats, lagoons, deserts and experiences beneath one of the most fascinating skies in South America.',
+      title: 'Bolivia: at the height of dreams',
+      meta: 'March 22–28, 2027 · 7 days / 6 nights · USD 1,385 per person',
+      text: 'Salt flats, lagoons and deserts under one of the most fascinating skies in South America.',
       imageAlt: 'Kelly standing on the Uyuni Salt Flat at dawn, wearing a striped poncho.',
     },
     soon: {
       label: 'Coming soon',
-      title: 'New roads',
-      text: "We're thinking about new roads. If you'd like to be among the first to know, leave us your details.",
-    },
-    past: {
-      eyebrow: 'Past experiences',
-      title: 'Journeys we have already shared.',
-      label: 'Previous trip',
-      items: ['Peru', 'Mexico'],
+      title: 'New paths',
+      text: 'Leave us your details and be among the first to know.',
     },
   },
   destinations: {
     eyebrow: 'Destinations',
-    title: 'Destinations that spark wonder.',
-    text: "There are places that call to us before we've even seen them. Landscapes that make us stop, cultures that awaken our curiosity and roads that remind us how much is still left to discover. This is a collection of places Kelly has traveled, and that inspire the stories we'll share at Wonderbound Journeys.",
-    tags: { visited: 'Visited', next: 'Next expedition' },
-    bolivia: {
-      name: 'Bolivia',
-      text: 'Salt flats, deserts and lagoons of the Altiplano, beneath skies that seem to belong to another world.',
-      cta: 'View the expedition',
-      gallery: [
-        { caption: 'Uyuni Salt Flat', alt: 'Kelly in profile wearing a red poncho on the Uyuni Salt Flat at dawn, under a pink sky.' },
-        { caption: 'Sunset on the salt flat', alt: 'Silhouette of Kelly in a hat on the Uyuni Salt Flat, under an orange and yellow sky.' },
-        { caption: 'Bolivian Altiplano', alt: 'A llama on green grass in front of reddish rock formations.' },
-        { caption: 'Altiplano desert', alt: 'A wind-sculpted rock in a desert with reddish mountains behind.' },
-        { caption: 'Starry skies', alt: 'The Milky Way across a night sky full of stars.' },
-        { caption: 'Uyuni Salt Flat', alt: 'Kelly standing on a staircase of salt blocks in the middle of the salt flat.' },
-      ],
-    },
-    others: {
-      title: 'Other places we have traveled',
-      items: [
-        { name: 'Peru', text: 'Previous group trip. Photographs and story coming soon.' },
-        { name: 'Mexico', text: 'Previous group trip. Photographs and story coming soon.' },
-      ],
-    },
-    note: 'Visited destinations are a source of inspiration and do not represent confirmed departures.',
+    title: 'Places that call to us.',
+    text: 'Inspiration for the paths ahead.',
+    cards: [
+      {
+        name: 'Patagonia',
+        tagline: 'Peaks, wind and ice.',
+        alt: 'Granite peaks of Patagonia above a lake at dawn.',
+      },
+      {
+        name: 'Egypt',
+        tagline: 'Desert, temples and millennia.',
+        alt: 'The pyramids of Egypt above desert dunes at sunset.',
+      },
+      {
+        name: 'Huayhuash',
+        tagline: 'Turquoise lagoons at altitude.',
+        alt: 'Turquoise lagoon beneath the snowy peaks of the Huayhuash range.',
+      },
+      {
+        name: 'Lapland',
+        tagline: 'Aurora skies and white silence.',
+        alt: 'Northern lights over a snowy Lapland landscape.',
+      },
+    ],
+    note: 'Destinations are inspiration and do not represent confirmed departures.',
   },
   about: {
     eyebrow: 'About Wonderbound',
     title: 'A way of traveling. A way of seeing.',
     paragraphs: [
-      'Wonderbound Journeys was born from the union of two ways of discovering the world: living it and observing it.',
-      'We believe in journeys that take us beyond a photograph of a place. In pausing, looking closely, sharing the road and coming home with memories that hold something of what we felt there.',
-      'Behind Wonderbound is Kelly Vega, a photographer and content creator with more than eight years of experience and journeys through 45 countries. After inspiring others to explore the world through her camera and accompanying group trips to Peru and Mexico, she decided to bring photography and travel together into a single experience.',
-      "That's how our expeditions were born: journeys to discover extraordinary places, share experiences and keep authentic moments.",
+      'Wonderbound Journeys brings together two ways of discovering the world: living it and observing it.',
+      'Behind it is Kelly Vega, photographer and content creator. After accompanying group trips to Peru and Mexico, she decided to bring photography and travel together in a single experience.',
     ],
-    emphasis: "It's not only about where we go, but how we live the road.",
+    emphasis: 'It is not only about where we go, but about how we live the road.',
     stats: [
-      { value: '8+', label: 'years creating content and photographing journeys' },
-      { value: '45', label: 'countries traveled' },
-      { value: '2', label: 'previous group trips: Peru and Mexico' },
+      { value: '8+', label: 'years photographing travel' },
+      { value: '45', label: 'countries visited' },
+      { value: '2', label: 'group trips: Peru and Mexico' },
     ],
-    pillarsTitle: 'How we understand travel',
     imageAlt: 'Kelly on the Uyuni Salt Flat, beneath a deep blue sky and an endless horizon.',
   },
   bolivia: {
@@ -321,45 +237,6 @@ export const en: Dictionary = {
     cta: {
       title: 'Reserve your place in Bolivia 2027.',
       text: 'Message us and we will answer your questions before you reserve.',
-    },
-    faq: {
-      eyebrow: 'Frequently asked questions',
-      title: 'About Bolivia 2027',
-      items: [
-        { q: 'What are the expedition dates?', a: 'March 22 to 28, 2027: 7 days / 6 nights.' },
-        {
-          q: 'How much does it cost and how is it paid?',
-          a: 'USD 1,385 per person, in three payments: USD 300 deposit, USD 600 before December 20, 2026 and USD 485 before January 31, 2027.',
-        },
-        {
-          q: 'What does the price include?',
-          a: 'Lodging for all six nights, ground transportation and sleeper buses on the specified legs, internal transfers, program excursions and entrance fees, local guides and operators, meals stated in the itinerary, accompaniment by Wonderbound and Kelly, and ten digital photographs per traveler. See the full list above.',
-        },
-        {
-          q: 'Are flights included?',
-          a: 'No. Domestic and international airfare are not included.',
-        },
-        {
-          q: 'Is travel insurance included?',
-          a: 'No, and it is mandatory. It must cover the conditions and activities of the expedition, including high-altitude areas.',
-        },
-        {
-          q: 'How does lodging work?',
-          a: 'Shared rooms for two or three travelers, subject to availability. A single room carries an additional cost and is subject to availability.',
-        },
-        {
-          q: 'Which photographs will I receive?',
-          a: 'Ten professional digital photographs selected by Kelly. The full set of captured material and a private session are not included.',
-        },
-        {
-          q: 'Is the mirror effect guaranteed?',
-          a: 'No. The mirror effect on the salt flat and sightings of specific wildlife are not guaranteed.',
-        },
-        {
-          q: 'What cancellation conditions apply?',
-          a: 'They are governed by the expedition contract and its cancellation policy. Message us on WhatsApp and we will share it with you before you reserve.',
-        },
-      ],
     },
   },
   contact: {

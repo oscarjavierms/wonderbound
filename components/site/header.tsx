@@ -2,8 +2,8 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useEffect, useState } from 'react'
-import { Menu, X } from 'lucide-react'
+import { useEffect, useRef, useState } from 'react'
+import { ChevronDown, Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import type { Locale } from '@/lib/i18n/config'
 
@@ -22,60 +22,57 @@ type HeaderProps = {
   }
 }
 
-const lightPages = ['/terms', '/privacy']
+const linkClass =
+  'eyebrow border-b border-transparent py-1 transition-colors hover:border-current focus-visible:outline-2 focus-visible:outline-offset-4'
 
 export function Header({ locale, labels }: HeaderProps) {
   const pathname = usePathname()
-  const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
 
   const rest = pathname.replace(new RegExp(`^/${locale}`), '') || ''
-  const onLightPage = lightPages.some((p) => rest.startsWith(p))
-  const solid = scrolled || open || onLightPage
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24)
-    onScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+  const onExpeditions = rest.startsWith('/expeditions') || rest.startsWith('/bolivia-2027')
 
   const links = [
     { href: `/${locale}`, label: labels.home, active: rest === '' },
-    { href: `/${locale}/expeditions`, label: labels.expeditions, active: rest.startsWith('/expeditions') },
     { href: `/${locale}/destinations`, label: labels.destinations, active: rest.startsWith('/destinations') },
     { href: `/${locale}/about`, label: labels.about, active: rest.startsWith('/about') },
   ]
 
   return (
-    <header
-      className={cn(
-        'fixed inset-x-0 top-0 z-50 transition-colors duration-300',
-        solid ? 'bg-salt/95 text-ink shadow-[0_1px_0_0] shadow-border backdrop-blur' : 'bg-transparent text-white',
-      )}
-    >
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-salt/95 text-ink backdrop-blur">
       <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between gap-4 px-5 md:h-20 md:px-8">
         <Link
           href={`/${locale}`}
           className="flex flex-col leading-none focus-visible:outline-2 focus-visible:outline-offset-4"
           onClick={() => setOpen(false)}
         >
-          <span className="font-display text-2xl font-medium tracking-tight md:text-[1.75rem]">
-            Wonderbound
+          <span className="font-display text-2xl tracking-tight md:text-[1.75rem]">Wonderbound</span>
+          <span className="eyebrow mt-1 text-[0.6rem] tracking-[0.38em] text-muted-foreground">
+            Journeys
           </span>
-          <span className="eyebrow mt-1 text-[0.6rem] tracking-[0.38em] opacity-80">Journeys</span>
         </Link>
 
-        <nav aria-label={labels.mainNav} className="hidden items-center gap-8 lg:flex">
-          {links.map((link) => (
+        <nav aria-label={labels.mainNav} className="hidden items-center gap-9 lg:flex">
+          <Link
+            href={links[0].href}
+            aria-current={links[0].active ? 'page' : undefined}
+            className={cn(linkClass, links[0].active && 'border-current')}
+          >
+            {links[0].label}
+          </Link>
+          <GroupDeparturesMenu
+            locale={locale}
+            label={labels.expeditions}
+            boliviaLabel={labels.bolivia}
+            active={onExpeditions}
+            boliviaActive={rest.startsWith('/bolivia-2027')}
+          />
+          {links.slice(1).map((link) => (
             <Link
               key={link.href}
               href={link.href}
               aria-current={link.active ? 'page' : undefined}
-              className={cn(
-                'eyebrow border-b border-transparent py-1 transition-colors hover:border-current',
-                link.active && 'border-current',
-              )}
+              className={cn(linkClass, link.active && 'border-current')}
             >
               {link.label}
             </Link>
@@ -84,12 +81,6 @@ export function Header({ locale, labels }: HeaderProps) {
 
         <div className="flex items-center gap-3 md:gap-5">
           <LanguageSwitcher locale={locale} rest={rest} label={labels.language} />
-          <Link
-            href={`/${locale}/bolivia-2027`}
-            className="hidden rounded-full bg-terracotta px-5 py-2.5 text-xs font-medium uppercase tracking-[0.18em] text-white transition-colors hover:bg-terracotta/90 sm:inline-flex"
-          >
-            {labels.bolivia}
-          </Link>
           <button
             type="button"
             className="-mr-2 inline-flex size-10 items-center justify-center lg:hidden"
@@ -106,31 +97,153 @@ export function Header({ locale, labels }: HeaderProps) {
       {open && (
         <div
           id="mobile-menu"
-          className="fixed inset-x-0 top-16 bottom-0 overflow-y-auto bg-ink px-5 pb-10 pt-8 text-salt md:top-20 lg:hidden"
+          className="fixed inset-x-0 top-16 bottom-0 overflow-y-auto bg-salt px-5 pb-10 pt-6 md:top-20 lg:hidden"
         >
           <nav aria-label={labels.mainNav} className="flex flex-col">
-            {links.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setOpen(false)}
-                aria-current={link.active ? 'page' : undefined}
-                className="border-b border-salt/15 py-5 font-display text-3xl"
-              >
-                {link.label}
-              </Link>
-            ))}
+            <MobileLink href={links[0].href} active={links[0].active} onNavigate={() => setOpen(false)}>
+              {links[0].label}
+            </MobileLink>
+            <MobileLink
+              href={`/${locale}/expeditions`}
+              active={rest.startsWith('/expeditions')}
+              onNavigate={() => setOpen(false)}
+            >
+              {labels.expeditions}
+            </MobileLink>
             <Link
               href={`/${locale}/bolivia-2027`}
               onClick={() => setOpen(false)}
-              className="mt-8 inline-flex items-center justify-center rounded-full bg-terracotta px-6 py-4 text-sm font-medium uppercase tracking-[0.18em] text-white"
+              aria-current={rest.startsWith('/bolivia-2027') ? 'page' : undefined}
+              className="border-b border-border py-4 pl-6 text-lg text-muted-foreground"
             >
               {labels.bolivia}
             </Link>
+            {links.slice(1).map((link) => (
+              <MobileLink
+                key={link.href}
+                href={link.href}
+                active={link.active}
+                onNavigate={() => setOpen(false)}
+              >
+                {link.label}
+              </MobileLink>
+            ))}
           </nav>
         </div>
       )}
     </header>
+  )
+}
+
+function MobileLink({
+  href,
+  active,
+  onNavigate,
+  children,
+}: {
+  href: string
+  active: boolean
+  onNavigate: () => void
+  children: React.ReactNode
+}) {
+  return (
+    <Link
+      href={href}
+      onClick={onNavigate}
+      aria-current={active ? 'page' : undefined}
+      className="border-b border-border py-5 font-display text-3xl"
+    >
+      {children}
+    </Link>
+  )
+}
+
+function GroupDeparturesMenu({
+  locale,
+  label,
+  boliviaLabel,
+  active,
+  boliviaActive,
+}: {
+  locale: Locale
+  label: string
+  boliviaLabel: string
+  active: boolean
+  boliviaActive: boolean
+}) {
+  const [open, setOpen] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
+  const pathname = usePathname()
+
+  useEffect(() => {
+    setOpen(false)
+  }, [pathname])
+
+  useEffect(() => {
+    if (!open) return
+    const onPointerDown = (event: PointerEvent) => {
+      if (ref.current && !ref.current.contains(event.target as Node)) setOpen(false)
+    }
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setOpen(false)
+    }
+    document.addEventListener('pointerdown', onPointerDown)
+    document.addEventListener('keydown', onKeyDown)
+    return () => {
+      document.removeEventListener('pointerdown', onPointerDown)
+      document.removeEventListener('keydown', onKeyDown)
+    }
+  }, [open])
+
+  return (
+    <div
+      ref={ref}
+      className="relative"
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+    >
+      <div className="flex items-center gap-1">
+        <Link
+          href={`/${locale}/expeditions`}
+          aria-current={active ? 'page' : undefined}
+          className={cn(linkClass, active && 'border-current')}
+        >
+          {label}
+        </Link>
+        <button
+          type="button"
+          aria-expanded={open}
+          aria-haspopup="true"
+          aria-controls="group-departures-menu"
+          aria-label={label}
+          onClick={() => setOpen((value) => !value)}
+          className="inline-flex size-6 items-center justify-center focus-visible:outline-2 focus-visible:outline-offset-2"
+        >
+          <ChevronDown
+            aria-hidden="true"
+            className={cn('size-3.5 transition-transform', open && 'rotate-180')}
+          />
+        </button>
+      </div>
+
+      <div
+        id="group-departures-menu"
+        hidden={!open}
+        className="absolute left-1/2 top-full w-56 -translate-x-1/2 pt-4"
+      >
+        <ul className="border border-border bg-white py-2 shadow-sm">
+          <li>
+            <Link
+              href={`/${locale}/bolivia-2027`}
+              aria-current={boliviaActive ? 'page' : undefined}
+              className="block px-5 py-3 font-display text-xl transition-colors hover:bg-sand focus-visible:bg-sand"
+            >
+              {boliviaLabel}
+            </Link>
+          </li>
+        </ul>
+      </div>
+    </div>
   )
 }
 
@@ -152,7 +265,7 @@ function LanguageSwitcher({ locale, rest, label }: { locale: Locale; rest: strin
             aria-current={option.code === locale ? 'true' : undefined}
             className={cn(
               'py-1 transition-opacity',
-              option.code === locale ? 'border-b border-current' : 'opacity-60 hover:opacity-100',
+              option.code === locale ? 'border-b border-current' : 'opacity-50 hover:opacity-100',
             )}
           >
             {option.text}
