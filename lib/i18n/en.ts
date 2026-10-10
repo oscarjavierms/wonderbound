@@ -102,19 +102,16 @@ export const en: Dictionary = {
       title: 'What they take home.',
       items: [
         {
-          quote: 'I came back with the best photos of my life and friends for good.',
-          name: 'Andrea M.',
-          trip: 'Bolivia',
+          quote:
+            "Traveling with @Wonderbound_journeys is enjoying life to the fullest. It's dreaming of something incredible and making it real. It's feeling safe and delighted, because every trip seems to guess your expectations. Thank you, Kelly, for putting your soul into every detail, making us feel that it's worth discovering what lies beyond our everyday lives, and that living means enjoying life in freedom. If anyone wants an incredible time, join in. You won't regret it: it has been my best investment and the best gift I could have given myself.",
+          name: 'Myriam V.',
+          trip: 'Wonderbound experience',
         },
         {
-          quote: 'Everything flowed. All I had to do was look, feel and let go.',
-          name: 'Carolina R.',
-          trip: 'Bolivia',
-        },
-        {
-          quote: "Kelly sees what you don't. Then she gives it back to you in a photo.",
-          name: 'Lucía P.',
-          trip: 'Bolivia',
+          quote:
+            'An unforgettable experience in Peru! My trip was simply incredible, full of magical moments and spectacular landscapes. I felt looked after the whole way, not only through the guidance during the routes, but also through the willingness and patience to help me capture beautiful photographs and keep those special memories. It was much more than a trip: it was an adventure full of emotion, learning and unforgettable memories.',
+          name: 'Laura M.',
+          trip: 'Peru expedition',
         },
       ],
     },
