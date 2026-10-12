@@ -3,7 +3,6 @@ import { ArrowUpRight } from 'lucide-react'
 import { Photo } from '@/components/site/photo'
 import { getDictionary, type Locale } from '@/lib/i18n/config'
 import { destinationCards } from '@/lib/site'
-import { cn } from '@/lib/utils'
 
 export function DestinationCards({ locale }: { locale: Locale }) {
   const dict = getDictionary(locale)
@@ -14,15 +13,7 @@ export function DestinationCards({ locale }: { locale: Locale }) {
       {destinationCards.map((card, index) => {
         const info = cards[index]
         return (
-          <li
-            key={card.id}
-            className={cn(
-              'col-span-1 lg:col-span-2',
-              index === 0 && 'col-span-2 sm:col-span-1',
-              index === 3 && 'lg:col-start-2',
-              index === destinationCards.length - 1 && 'max-lg:col-span-2 max-lg:mx-auto max-lg:w-[calc(50%-0.375rem)]',
-            )}
-          >
+          <li key={card.id} className="col-span-1 lg:col-span-2">
             <Link
               href={`/${locale}/destinations/${card.id}`}
               className="group relative isolate block aspect-[4/5] overflow-hidden rounded-sm text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
