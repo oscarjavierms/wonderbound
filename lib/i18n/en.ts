@@ -36,7 +36,7 @@ export const en: Dictionary = {
     discoverBolivia: 'Discover Bolivia 2027',
     meetWonderbound: 'Meet Wonderbound',
     exploreExpedition: 'Explore the expedition',
-    knowOurStory: 'Read our story',
+    knowOurStory: 'Read our story →',
     exploreDestinations: 'Explore the destinations',
     exploreExpeditions: 'See group departures',
     whatsapp: 'Ask us on WhatsApp',
@@ -72,12 +72,18 @@ export const en: Dictionary = {
       description: 'Salt flats, lagoons and high-altitude skies. A small group, with Kelly behind the camera.',
       imageAlt: 'White off-road vehicle reflected on the mirror-like water of the Uyuni Salt Flat.',
     },
+    bolivia: {
+      eyebrow: 'Next group departure · 2027',
+      title: 'Bolivia: The Mirror of the Sky',
+      text: 'An immersive photography expedition across the Uyuni Salt Flat and the landscapes of the altiplano.',
+      cta: 'Discover the Bolivia Expedition',
+      imageAlt: 'White off-road vehicle reflected on the mirror-like water of the Uyuni Salt Flat.',
+    },
     kelly: {
       eyebrow: 'The founder',
       title: "Hi, I'm Kelly.",
       paragraphs: [
-        'Eight years and 45 countries behind the camera.',
-        'I created Wonderbound to travel in good company and come home with memories you can look at.',
+        "I've spent more than eight years photographing extraordinary places in 45 countries, but I realized the most valuable part of travel isn't just showing the world, it's living it with you. At Wonderbound I stay behind the camera, capturing the authentic, unposed moments that almost always fall outside the frame. We design expeditions with real time to feel, connect and bring home memories that will last forever.",
       ],
       imageAlt: 'Kelly in a red-striped poncho looking up at the sky over the Uyuni Salt Flat.',
     },
@@ -142,6 +148,16 @@ export const en: Dictionary = {
     text: 'Inspiration for the paths ahead.',
     cards: [
       {
+        name: 'Bolivia',
+        tagline: 'Salt flats, mirror waters and high-altitude skies.',
+        alt: 'Uyuni Salt Flat under a pink sky, with the sky reflected in the water.',
+      },
+      {
+        name: 'Peru',
+        tagline: 'Turquoise lagoons and sacred peaks.',
+        alt: 'Turquoise lagoon beneath the snowy peaks of the Huayhuash range in Peru.',
+      },
+      {
         name: 'Patagonia',
         tagline: 'Peaks, wind and ice.',
         alt: 'Granite peaks of Patagonia above a lake at dawn.',
@@ -152,32 +168,44 @@ export const en: Dictionary = {
         alt: 'The pyramids of Egypt above desert dunes at sunset.',
       },
       {
-        name: 'Huayhuash',
-        tagline: 'Turquoise lagoons at altitude.',
-        alt: 'Turquoise lagoon beneath the snowy peaks of the Huayhuash range.',
-      },
-      {
         name: 'Lapland',
         tagline: 'Aurora skies and white silence.',
         alt: 'Northern lights over a snowy Lapland landscape.',
       },
     ],
+    detail: {
+      galleryEyebrow: 'Gallery',
+      soon: "We're preparing the photo gallery for {destination}. You'll be able to browse it here very soon.",
+      back: 'See all destinations',
+      ask: 'Tell me about {destination}',
+    },
     note: 'Destinations are inspiration and do not represent confirmed departures.',
   },
   about: {
-    eyebrow: 'About Wonderbound',
-    title: 'A way of traveling. A way of seeing.',
-    paragraphs: [
-      'Wonderbound Journeys brings together two ways of discovering the world: living it and observing it.',
-      'Behind it is Kelly Vega, photographer and content creator. After accompanying group trips to Peru and Mexico, she decided to bring photography and travel together in a single experience.',
-    ],
-    emphasis: 'It is not only about where we go, but about how we live the road.',
-    stats: [
-      { value: '8+', label: 'years photographing travel' },
-      { value: '45', label: 'countries visited' },
-      { value: '2', label: 'group trips: Peru and Mexico' },
-    ],
-    imageAlt: 'Kelly on the Uyuni Salt Flat, beneath a deep blue sky and an endless horizon.',
+    eyebrow: 'Wonderbound Journeys',
+    title: 'Journeys to live. Photos to remember.',
+    manifesto: {
+      paragraphs: [
+        'We believe that traveling is much more than visiting a place. It is discovering landscapes that change our perspective, sharing moments with people who feel the same curiosity about the world, and living experiences that stay with us long after we return home.',
+        'Wonderbound Journeys was born from that way of understanding travel: a proposal that brings together the exploration of the world and the art of capturing it through photography.',
+        'We design journeys with intention, routes that invite exploration and time to truly enjoy them. Every destination is a chance to discover something new, connect with the surroundings and keep the moments that make an experience unforgettable.',
+        "Photography is part of the way we travel. Through Kelly's eyes, the landscapes, the encounters and the small moments find a way to stay with us long after the trip ends.",
+      ],
+      emphasis:
+        'It is not only about reaching a destination. It is about living it, feeling it and taking home much more than photographs.',
+    },
+    founder: {
+      eyebrow: 'The founder',
+      title: 'Traveling is a way of seeing the world',
+      lead: "I'm Kelly.",
+      paragraphs: [
+        "I've spent more than eight years creating content and photographing journeys around the world. After 45 countries, I'm certain of one thing: the world is too beautiful to stay only in our imagination, and more people should go out and explore it.",
+        'I started by inspiring people to travel from behind my camera. Then came the group trips to Peru and Mexico, and I understood that what I enjoy most is not just showing a place, but living it with you.',
+        'That is why I created Wonderbound Journeys: expeditions where I stay behind the camera throughout the whole journey, attentive to the moments that almost always fall outside the photos, and where the trip is designed with time to truly enjoy it.',
+        'Today I want to take photography and travel one step further, as a single experience. Come wonder with us.',
+      ],
+      imageAlt: 'Kelly on the Uyuni Salt Flat, beneath a deep blue sky and an endless horizon.',
+    },
   },
   bolivia: {
     eyebrow: 'Expedition · Bolivia 2027',

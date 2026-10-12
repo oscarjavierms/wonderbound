@@ -34,8 +34,8 @@ export function Header({ locale, labels }: HeaderProps) {
   const rest = pathname.replace(new RegExp(`^/${locale}`), '') || ''
   const onExpeditions = rest.startsWith('/expeditions') || rest.startsWith('/bolivia-2027')
 
+  const homeLink = { href: `/${locale}`, label: labels.home, active: rest === '' }
   const links = [
-    { href: `/${locale}`, label: labels.home, active: rest === '' },
     { href: `/${locale}/destinations`, label: labels.destinations, active: rest.startsWith('/destinations') },
     { href: `/${locale}/about`, label: labels.about, active: rest.startsWith('/about') },
   ]
@@ -46,81 +46,125 @@ export function Header({ locale, labels }: HeaderProps) {
   const lightText = transparent && hasDarkHero
   const isHidden = hidden && !open
 
+  useEffect(() => {
+    setOpen(false)
+  }, [pathname])
+
+  useEffect(() => {
+    if (!open) return
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setOpen(false)
+    }
+    const onResize = () => {
+      if (window.matchMedia('(min-width: 1024px)').matches) setOpen(false)
+    }
+    document.addEventListener('keydown', onKeyDown)
+    window.addEventListener('resize', onResize)
+    return () => {
+      document.body.style.overflow = previousOverflow
+      document.removeEventListener('keydown', onKeyDown)
+      window.removeEventListener('resize', onResize)
+    }
+  }, [open])
+
   return (
-    <header
-      className={cn(
-        'fixed inset-x-0 top-0 z-50 w-full transition-[transform,background-color,color,box-shadow,backdrop-filter] duration-300 ease-out',
-        transparent
-          ? 'bg-transparent shadow-none'
-          : 'bg-white/80 shadow-sm backdrop-blur-md',
-        lightText ? 'text-white' : 'text-ink',
-        isHidden && '-translate-y-full',
-      )}
-    >
-      <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between gap-4 px-5 md:h-20 md:px-8">
-        <Link
-          href={`/${locale}`}
-          className="flex flex-col leading-none focus-visible:outline-2 focus-visible:outline-offset-4"
-          onClick={() => setOpen(false)}
-        >
-          <span className="font-display text-2xl tracking-tight md:text-[1.75rem]">Wonderbound</span>
-          <span
-            className={cn(
-              'eyebrow mt-1 text-[0.6rem] tracking-[0.38em] transition-colors duration-300',
-              lightText ? 'text-white/75' : 'text-muted-foreground',
-            )}
+    <>
+      <header
+        className={cn(
+          'fixed inset-x-0 top-0 z-[100] w-full transition-[transform,background-color,color,box-shadow,backdrop-filter] duration-300 ease-out',
+          open
+            ? 'bg-white shadow-none'
+            : transparent
+              ? 'bg-transparent shadow-none'
+              : 'bg-white/80 shadow-sm backdrop-blur-md',
+          lightText ? 'text-white' : 'text-[#111111]',
+          isHidden && '-translate-y-full',
+        )}
+      >
+        <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between gap-4 px-5 md:h-20 md:px-8">
+          <Link
+            href={`/${locale}`}
+            className="flex flex-col leading-none focus-visible:outline-2 focus-visible:outline-offset-4"
+            onClick={() => setOpen(false)}
           >
-            Journeys
-          </span>
-        </Link>
-
-        <nav aria-label={labels.mainNav} className="hidden items-center gap-10 lg:flex">
-          <GroupDeparturesMenu
-            locale={locale}
-            label={labels.expeditions}
-            boliviaLabel={labels.bolivia}
-            boliviaMeta={labels.boliviaMeta}
-            heading={labels.activeDepartures}
-            active={onExpeditions}
-            boliviaActive={rest.startsWith('/bolivia-2027')}
-          />
-          {links.slice(1).map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              aria-current={link.active ? 'page' : undefined}
-              className={cn(linkClass, link.active && 'border-current')}
+            <span className="font-display text-2xl tracking-tight md:text-[1.75rem]">Wonderbound</span>
+            <span
+              className={cn(
+                'eyebrow mt-1 text-[0.6rem] tracking-[0.38em] transition-colors duration-300',
+                lightText ? 'text-white/75' : 'text-muted-foreground',
+              )}
             >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
+              Journeys
+            </span>
+          </Link>
 
-        <div className="flex items-center gap-3 md:gap-5">
-          <LanguageSwitcher locale={locale} rest={rest} label={labels.language} />
-          <button
-            type="button"
-            className="-mr-2 inline-flex size-10 items-center justify-center lg:hidden"
-            aria-expanded={open}
-            aria-controls="mobile-menu"
-            aria-label={open ? labels.closeMenu : labels.openMenu}
-            onClick={() => setOpen((value) => !value)}
-          >
-            {open ? <X aria-hidden="true" className="size-6" /> : <Menu aria-hidden="true" className="size-6" />}
-          </button>
+          <nav aria-label={labels.mainNav} className="hidden items-center gap-10 lg:flex">
+            <Link
+              href={homeLink.href}
+              aria-current={homeLink.active ? 'page' : undefined}
+              className={cn(linkClass, homeLink.active && 'border-current')}
+            >
+              {homeLink.label}
+            </Link>
+            <GroupDeparturesMenu
+              locale={locale}
+              label={labels.expeditions}
+              boliviaLabel={labels.bolivia}
+              boliviaMeta={labels.boliviaMeta}
+              heading={labels.activeDepartures}
+              active={onExpeditions}
+              boliviaActive={rest.startsWith('/bolivia-2027')}
+            />
+            {links.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                aria-current={link.active ? 'page' : undefined}
+                className={cn(linkClass, link.active && 'border-current')}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+
+          <div className="flex items-center gap-3 md:gap-5">
+            <div className="max-sm:hidden">
+              <LanguageSwitcher locale={locale} rest={rest} label={labels.language} />
+            </div>
+            <button
+              type="button"
+              className="-mr-2 inline-flex size-10 items-center justify-center lg:hidden"
+              aria-expanded={open}
+              aria-controls="mobile-menu"
+              aria-label={open ? labels.closeMenu : labels.openMenu}
+              onClick={() => setOpen((value) => !value)}
+            >
+              {open ? <X aria-hidden="true" className="size-6" /> : <Menu aria-hidden="true" className="size-6" />}
+            </button>
+          </div>
         </div>
-      </div>
+      </header>
 
       {open && (
         <div
           id="mobile-menu"
-          className="fixed inset-x-0 top-16 bottom-0 overflow-y-auto bg-salt px-5 pb-10 pt-6 md:top-20 lg:hidden"
+          className="fixed inset-0 z-[90] overflow-y-auto bg-white px-6 pb-10 pt-24 text-[#111111] lg:hidden"
         >
           <nav aria-label={labels.mainNav} className="flex flex-col">
+            <MobileLink
+              href={homeLink.href}
+              active={homeLink.active}
+              onNavigate={() => setOpen(false)}
+            >
+              {homeLink.label}
+            </MobileLink>
             <MobileLink
               href={`/${locale}/expeditions`}
               active={rest.startsWith('/expeditions')}
               onNavigate={() => setOpen(false)}
+              borderless
             >
               {labels.expeditions}
             </MobileLink>
@@ -128,14 +172,14 @@ export function Header({ locale, labels }: HeaderProps) {
               href={`/${locale}/bolivia-2027`}
               onClick={() => setOpen(false)}
               aria-current={rest.startsWith('/bolivia-2027') ? 'page' : undefined}
-              className="flex items-baseline justify-between gap-4 border-b border-border py-4 pl-6"
+              className="-mt-1 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-b border-black/10 pb-5 pl-5"
             >
               <span className="font-display text-2xl italic">{labels.bolivia}</span>
-              <span className="text-[0.65rem] uppercase tracking-[0.22em] text-muted-foreground">
+              <span className="text-[0.62rem] uppercase tracking-[0.16em] text-black/55">
                 {labels.boliviaMeta}
               </span>
             </Link>
-            {links.slice(1).map((link) => (
+            {links.map((link) => (
               <MobileLink
                 key={link.href}
                 href={link.href}
@@ -146,9 +190,12 @@ export function Header({ locale, labels }: HeaderProps) {
               </MobileLink>
             ))}
           </nav>
+          <div className="mt-10 sm:hidden">
+            <LanguageSwitcher locale={locale} rest={rest} label={labels.language} />
+          </div>
         </div>
       )}
-    </header>
+    </>
   )
 }
 
@@ -212,11 +259,13 @@ function MobileLink({
   href,
   active,
   onNavigate,
+  borderless,
   children,
 }: {
   href: string
   active: boolean
   onNavigate: () => void
+  borderless?: boolean
   children: React.ReactNode
 }) {
   return (
@@ -224,7 +273,11 @@ function MobileLink({
       href={href}
       onClick={onNavigate}
       aria-current={active ? 'page' : undefined}
-      className="border-b border-border py-5 font-display text-3xl"
+      className={cn(
+        'py-5 font-display text-3xl leading-tight',
+        !borderless && 'border-b border-black/10',
+        active && 'italic',
+      )}
     >
       {children}
     </Link>

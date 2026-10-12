@@ -13,7 +13,7 @@ export function Hero({ locale }: { locale: Locale }) {
         className="absolute inset-0 -z-10"
         sizes="100vw"
         priority
-        position="center 35%"
+        position="center 25%"
       />
       <div
         aria-hidden="true"
