@@ -61,6 +61,11 @@ export const en: Dictionary = {
       eyebrow: 'Destinations',
       title: 'Places that call to us.',
       cta: 'See all destinations',
+      launchBadge: 'New launch!',
+      launchCta: 'See group departure',
+      carouselLabel: 'Destinations',
+      prev: 'Previous destination',
+      next: 'Next destination',
     },
     next: {
       eyebrow: 'Next departure',
@@ -74,7 +79,7 @@ export const en: Dictionary = {
     },
     bolivia: {
       eyebrow: 'Next group departure · 2027',
-      title: 'Bolivia: The Mirror of the Sky',
+      title: 'Bolivia 2027: The Mirror of the Sky',
       text: 'An immersive photography expedition across the Uyuni Salt Flat and the landscapes of the altiplano.',
       cta: 'Discover the Bolivia Expedition',
       imageAlt: 'White off-road vehicle reflected on the mirror-like water of the Uyuni Salt Flat.',
@@ -106,6 +111,11 @@ export const en: Dictionary = {
     testimonials: {
       eyebrow: 'Travelers',
       title: 'What they take home.',
+      readMore: 'Read more...',
+      readLess: 'Read less',
+      carouselLabel: 'Traveler testimonials',
+      prev: 'Previous testimonial',
+      next: 'Next testimonial',
       items: [
         {
           quote:
@@ -154,6 +164,11 @@ export const en: Dictionary = {
       },
       {
         name: 'Peru',
+        tagline: 'Machu Picchu and sacred valleys.',
+        alt: 'Inca terraces of Machu Picchu at sunrise, with Huayna Picchu mountain behind.',
+      },
+      {
+        name: 'Huayhuash',
         tagline: 'Turquoise lagoons and sacred peaks.',
         alt: 'Turquoise lagoon beneath the snowy peaks of the Huayhuash range in Peru.',
       },

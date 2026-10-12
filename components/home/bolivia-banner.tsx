@@ -6,7 +6,7 @@ import { href, photos } from '@/lib/site'
 export function BoliviaBanner({ locale }: { locale: Locale }) {
   const { bolivia } = getDictionary(locale).home
   return (
-    <section className="pb-24 md:pb-36" aria-labelledby="bolivia-banner-title">
+    <section className="py-8 sm:py-16 md:py-24" aria-labelledby="bolivia-banner-title">
       <Container>
         <div className="relative isolate overflow-hidden rounded-sm text-white">
           <Photo
@@ -20,7 +20,7 @@ export function BoliviaBanner({ locale }: { locale: Locale }) {
             aria-hidden="true"
             className="absolute inset-0 -z-10 bg-gradient-to-r from-ink/80 via-ink/40 to-ink/5 max-md:bg-gradient-to-t max-md:from-ink/85 max-md:via-ink/40 max-md:to-ink/10"
           />
-          <div className="flex min-h-[28rem] flex-col justify-end p-8 md:min-h-[32rem] md:p-14">
+          <div className="flex min-h-[26rem] flex-col justify-end p-6 sm:p-8 md:min-h-[32rem] md:p-14">
             <Eyebrow className="text-white/85">{bolivia.eyebrow}</Eyebrow>
             <h2
               id="bolivia-banner-title"

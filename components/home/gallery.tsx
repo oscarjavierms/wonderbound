@@ -16,13 +16,13 @@ const tiles = [
 export function Gallery({ locale }: { locale: Locale }) {
   const { gallery } = getDictionary(locale).home
   return (
-    <section className="py-24 md:py-40">
+    <section className="py-8 sm:py-16 md:py-24">
       <Container>
         <div className="mx-auto max-w-2xl text-center">
           <Eyebrow className="text-muted-foreground">{gallery.eyebrow}</Eyebrow>
-          <h2 className="mt-6 text-4xl leading-[1.05] md:text-6xl">{gallery.title}</h2>
+          <h2 className="mt-3 text-4xl leading-[1.05] md:mt-6 md:text-6xl">{gallery.title}</h2>
         </div>
-        <ul className="mt-16 columns-2 gap-3 md:mt-24 md:columns-3 md:gap-5">
+        <ul className="mt-6 columns-2 gap-3 md:mt-12 md:columns-3 md:gap-5">
           {tiles.map((tile, index) => (
             <li key={tile.src} className="mb-3 break-inside-avoid overflow-hidden md:mb-5">
               <Photo

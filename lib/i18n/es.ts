@@ -59,6 +59,11 @@ export const es = {
       eyebrow: 'Destinos',
       title: 'Lugares que nos llaman.',
       cta: 'Ver todos los destinos',
+      launchBadge: '¡Nuevo lanzamiento!',
+      launchCta: 'Ver salida grupal',
+      carouselLabel: 'Destinos',
+      prev: 'Destino anterior',
+      next: 'Destino siguiente',
     },
     next: {
       eyebrow: 'Próxima salida',
@@ -72,7 +77,7 @@ export const es = {
     },
     bolivia: {
       eyebrow: 'Próxima salida grupal · 2027',
-      title: 'Bolivia: El Espejo del Cielo',
+      title: 'Bolivia 2027: El Espejo del Cielo',
       text: 'Una expedición fotográfica inmersiva por el Salar de Uyuni y los paisajes del altiplano.',
       cta: 'Descubrir Expedición Bolivia',
       imageAlt: 'Vehículo todoterreno blanco reflejado sobre el espejo de agua del Salar de Uyuni.',
@@ -104,6 +109,11 @@ export const es = {
     testimonials: {
       eyebrow: 'Viajeros',
       title: 'Lo que se llevan.',
+      readMore: 'Leer más...',
+      readLess: 'Leer menos',
+      carouselLabel: 'Testimonios de viajeras',
+      prev: 'Testimonio anterior',
+      next: 'Testimonio siguiente',
       items: [
         {
           quote:
@@ -152,6 +162,11 @@ export const es = {
       },
       {
         name: 'Perú',
+        tagline: 'Machu Picchu y valles sagrados.',
+        alt: 'Terrazas incas de Machu Picchu al amanecer, con la montaña Huayna Picchu al fondo.',
+      },
+      {
+        name: 'Huayhuash',
         tagline: 'Lagunas turquesa y cumbres sagradas.',
         alt: 'Laguna turquesa bajo las cumbres nevadas de la cordillera Huayhuash, en Perú.',
       },

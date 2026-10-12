@@ -7,8 +7,8 @@ export function KellySection({ locale }: { locale: Locale }) {
   const dict = getDictionary(locale)
   const { kelly } = dict.home
   return (
-    <section className="py-24 md:py-40">
-      <Container className="grid items-center gap-12 md:grid-cols-2 md:gap-20 lg:gap-32">
+    <section className="py-8 sm:py-16 md:py-24">
+      <Container className="grid items-center gap-8 md:grid-cols-2 md:gap-20 lg:gap-32">
         <Photo
           src={photos.salarPoncho.src}
           alt={kelly.imageAlt}

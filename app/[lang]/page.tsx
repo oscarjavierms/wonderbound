@@ -16,8 +16,8 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
     <>
       <Hero locale={lang} />
       <DestinationsTeaser locale={lang} />
-      <BoliviaBanner locale={lang} />
       <KellySection locale={lang} />
+      <BoliviaBanner locale={lang} />
       <Gallery locale={lang} />
       <Testimonials locale={lang} />
       <Finale locale={lang} />

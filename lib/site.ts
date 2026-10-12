@@ -46,10 +46,14 @@ export const photos = {
 
 export const destinationCards = [
   { id: 'bolivia', src: '/images/salar-pink.jpg' },
-  { id: 'peru', src: '/images/dest-huayhuash.png' },
+  { id: 'peru', src: '/images/dest-peru.png' },
+  { id: 'huayhuash', src: '/images/dest-huayhuash.png' },
   { id: 'patagonia', src: '/images/dest-patagonia.png' },
   { id: 'egipto', src: '/images/dest-egipto.png' },
   { id: 'laponia', src: '/images/dest-laponia.png' },
 ] as const
+
+// Ruta de la foto de perfil por testimonio, en el mismo orden del diccionario. null muestra iniciales.
+export const testimonialAvatars: (string | null)[] = [null, null]
 
 export type DestinationId = (typeof destinationCards)[number]['id']
