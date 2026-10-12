@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation'
+import { BoliviaBanner } from '@/components/home/bolivia-banner'
 import { DestinationsTeaser } from '@/components/home/destinations-teaser'
 import { Finale } from '@/components/home/finale'
 import { Gallery } from '@/components/home/gallery'
@@ -15,6 +16,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
     <>
       <Hero locale={lang} />
       <DestinationsTeaser locale={lang} />
+      <BoliviaBanner locale={lang} />
       <KellySection locale={lang} />
       <Gallery locale={lang} />
       <Testimonials locale={lang} />

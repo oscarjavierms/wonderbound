@@ -15,7 +15,7 @@ export function KellySection({ locale }: { locale: Locale }) {
           className="aspect-[4/5] w-full"
           sizes="(min-width: 768px) 50vw, 100vw"
         />
-        <div className="max-w-md">
+        <div className="max-w-lg">
           <Eyebrow className="text-muted-foreground">{kelly.eyebrow}</Eyebrow>
           <h2 className="mt-6 text-5xl leading-none md:text-7xl">{kelly.title}</h2>
           <div className="mt-8 space-y-4 text-lg leading-relaxed text-muted-foreground">
@@ -23,7 +23,7 @@ export function KellySection({ locale }: { locale: Locale }) {
               <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
-          <ButtonLink href={href(locale, 'about')} variant="dark" className="mt-10">
+          <ButtonLink href={href(locale, 'about')} variant="dark" arrow={false} className="mt-10">
             {dict.cta.knowOurStory}
           </ButtonLink>
         </div>

@@ -16,7 +16,7 @@ export const es = {
   signature: 'Come wonder with us.',
   nav: {
     home: 'Inicio',
-    expeditions: 'Salidas grupales',
+    expeditions: 'Salidas Grupales',
     destinations: 'Destinos',
     about: 'Sobre Wonderbound',
     bolivia: 'Bolivia 2027',
@@ -34,7 +34,7 @@ export const es = {
     discoverBolivia: 'Descubre Bolivia 2027',
     meetWonderbound: 'Conoce Wonderbound',
     exploreExpedition: 'Explora la expedición',
-    knowOurStory: 'Conoce nuestra historia',
+    knowOurStory: 'Conoce nuestra historia →',
     exploreDestinations: 'Explora los destinos',
     exploreExpeditions: 'Ver salidas grupales',
     whatsapp: 'Consulta por WhatsApp',
@@ -70,12 +70,18 @@ export const es = {
       description: 'Salares, lagunas y cielos de altura. Un grupo reducido y Kelly detrás de la cámara.',
       imageAlt: 'Vehículo todoterreno blanco reflejado sobre el espejo de agua del Salar de Uyuni.',
     },
+    bolivia: {
+      eyebrow: 'Próxima salida grupal · 2027',
+      title: 'Bolivia: El Espejo del Cielo',
+      text: 'Una expedición fotográfica inmersiva por el Salar de Uyuni y los paisajes del altiplano.',
+      cta: 'Descubrir Expedición Bolivia',
+      imageAlt: 'Vehículo todoterreno blanco reflejado sobre el espejo de agua del Salar de Uyuni.',
+    },
     kelly: {
       eyebrow: 'La fundadora',
       title: 'Hola, soy Kelly.',
       paragraphs: [
-        'Ocho años y 45 países detrás de la cámara.',
-        'Creé Wonderbound para viajar en buena compañía y volver con recuerdos que se puedan mirar.',
+        'Llevo más de ocho años fotografiando lugares extraordinarios en 45 países, pero entendí que lo más valioso de viajar no es solo mostrar el mundo, sino vivirlo contigo. En Wonderbound voy detrás de la cámara capturando los instantes auténticos y no posados que casi siempre se quedan fuera del encuadre. Diseñamos expediciones con tiempo real para sentir, conectar y llevarte recuerdos que permanecerán para siempre.',
       ],
       imageAlt: 'Kelly con poncho de rayas rojas mirando al cielo sobre el Salar de Uyuni.',
     },
@@ -140,6 +146,16 @@ export const es = {
     text: 'Inspiración para los caminos que vendrán.',
     cards: [
       {
+        name: 'Bolivia',
+        tagline: 'Salares, espejos de agua y cielos de altura.',
+        alt: 'Salar de Uyuni bajo un cielo rosado, con el cielo reflejado en el agua.',
+      },
+      {
+        name: 'Perú',
+        tagline: 'Lagunas turquesa y cumbres sagradas.',
+        alt: 'Laguna turquesa bajo las cumbres nevadas de la cordillera Huayhuash, en Perú.',
+      },
+      {
         name: 'Patagonia',
         tagline: 'Cumbres, viento y hielo.',
         alt: 'Cumbres graníticas de la Patagonia sobre un lago al amanecer.',
@@ -150,32 +166,44 @@ export const es = {
         alt: 'Pirámides de Egipto sobre las dunas del desierto al atardecer.',
       },
       {
-        name: 'Huayhuash',
-        tagline: 'Lagunas turquesa a gran altura.',
-        alt: 'Laguna turquesa bajo las cumbres nevadas de la cordillera Huayhuash.',
-      },
-      {
         name: 'Laponia',
         tagline: 'Cielos de aurora y silencio blanco.',
         alt: 'Aurora boreal sobre un paisaje nevado de Laponia.',
       },
     ],
+    detail: {
+      galleryEyebrow: 'Galería',
+      soon: 'Estamos preparando la galería de fotos de {destination}. Muy pronto podrás recorrerla aquí.',
+      back: 'Ver todos los destinos',
+      ask: 'Cuéntame de {destination}',
+    },
     note: 'Los destinos son inspiración y no representan salidas confirmadas.',
   },
   about: {
-    eyebrow: 'Sobre Wonderbound',
-    title: 'Una forma de viajar. Una manera de mirar.',
-    paragraphs: [
-      'Wonderbound Journeys une dos formas de descubrir el mundo: vivirlo y observarlo.',
-      'Detrás está Kelly Vega, fotógrafa y creadora de contenido. Tras acompañar viajes grupales a Perú y México, decidió reunir fotografía y viaje en una sola experiencia.',
-    ],
-    emphasis: 'No se trata solo de dónde vamos, sino de cómo vivimos el camino.',
-    stats: [
-      { value: '8+', label: 'años fotografiando viajes' },
-      { value: '45', label: 'países recorridos' },
-      { value: '2', label: 'viajes grupales: Perú y México' },
-    ],
-    imageAlt: 'Kelly sobre el Salar de Uyuni, con un cielo azul profundo y un horizonte infinito.',
+    eyebrow: 'Wonderbound Journeys',
+    title: 'Viajes para vivirlos. Fotos para recordarlos.',
+    manifesto: {
+      paragraphs: [
+        'Creemos que viajar es mucho más que visitar un lugar. Es descubrir paisajes que nos cambian la perspectiva, compartir momentos con personas que sienten la misma curiosidad por el mundo y vivir experiencias que permanecen mucho después de regresar a casa.',
+        'Wonderbound Journeys nace de esa forma de entender los viajes: una propuesta que une la exploración del mundo con el arte de capturarlo a través de la fotografía.',
+        'Diseñamos viajes con intención, rutas que invitan a explorar y tiempo para disfrutar de verdad. Cada destino es una oportunidad para descubrir algo nuevo, conectar con el entorno y guardar esos instantes que hacen que una experiencia sea inolvidable.',
+        'La fotografía forma parte de nuestra manera de viajar. A través de la mirada de Kelly, los paisajes, los encuentros y los pequeños momentos encuentran una forma de permanecer con nosotros mucho después de que termina el viaje.',
+      ],
+      emphasis:
+        'No se trata solamente de llegar a un destino. Se trata de vivirlo, sentirlo y llevarte contigo mucho más que fotografías.',
+    },
+    founder: {
+      eyebrow: 'La fundadora',
+      title: 'Viajar es una forma de mirar el mundo',
+      lead: 'Soy Kelly.',
+      paragraphs: [
+        'Llevo más de ocho años creando contenido y fotografiando viajes alrededor del mundo. Después de 45 países, tengo una certeza: el mundo es demasiado hermoso para quedarse solo en nuestra imaginación, y más gente debería salir a explorarlo.',
+        'Empecé inspirando a viajar desde mi cámara. Después llegaron los viajes en grupo a Perú y a México, y entendí que lo que más disfruto no es solo mostrar un lugar, sino vivirlo contigo.',
+        'Por eso creé Wonderbound Journeys: expediciones donde yo voy detrás de la cámara durante todo el recorrido, atenta a los momentos que casi siempre se quedan fuera de las fotos, y donde el viaje está diseñado con tiempo para disfrutar de verdad.',
+        'Hoy quiero llevar la fotografía y los viajes un paso más allá, como una sola experiencia. Ven a maravillarte con nosotros.',
+      ],
+      imageAlt: 'Kelly sobre el Salar de Uyuni, con un cielo azul profundo y un horizonte infinito.',
+    },
   },
   bolivia: {
     eyebrow: 'Expedición · Bolivia 2027',

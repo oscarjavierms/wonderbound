@@ -45,8 +45,11 @@ export const photos = {
 } as const
 
 export const destinationCards = [
+  { id: 'bolivia', src: '/images/salar-pink.jpg' },
+  { id: 'peru', src: '/images/dest-huayhuash.png' },
   { id: 'patagonia', src: '/images/dest-patagonia.png' },
   { id: 'egipto', src: '/images/dest-egipto.png' },
-  { id: 'huayhuash', src: '/images/dest-huayhuash.png' },
   { id: 'laponia', src: '/images/dest-laponia.png' },
 ] as const
+
+export type DestinationId = (typeof destinationCards)[number]['id']
