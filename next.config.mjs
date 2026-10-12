@@ -6,6 +6,20 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  async redirects() {
+    return [
+      {
+        source: '/:lang/bolivia-2027',
+        destination: '/:lang/salidas-grupales/bolivia-2027',
+        permanent: true,
+      },
+      {
+        source: '/:lang/salidas-grupales',
+        destination: '/:lang/expeditions',
+        permanent: true,
+      },
+    ]
+  },
 }
 
 export default nextConfig

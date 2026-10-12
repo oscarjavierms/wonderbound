@@ -32,7 +32,7 @@ export function Header({ locale, labels }: HeaderProps) {
   const [open, setOpen] = useState(false)
 
   const rest = pathname.replace(new RegExp(`^/${locale}`), '') || ''
-  const onExpeditions = rest.startsWith('/expeditions') || rest.startsWith('/bolivia-2027')
+  const onExpeditions = rest.startsWith('/expeditions') || rest.endsWith('/bolivia-2027')
 
   const homeLink = { href: `/${locale}`, label: labels.home, active: rest === '' }
   const links = [
@@ -41,7 +41,7 @@ export function Header({ locale, labels }: HeaderProps) {
   ]
 
   const { atTop, hidden } = useSmartNavbar(pathname)
-  const hasDarkHero = rest === '' || rest.startsWith('/bolivia-2027')
+  const hasDarkHero = rest === '' || rest.endsWith('/bolivia-2027')
   const transparent = atTop && !open
   const lightText = transparent && hasDarkHero
   const isHidden = hidden && !open
@@ -115,7 +115,7 @@ export function Header({ locale, labels }: HeaderProps) {
               boliviaMeta={labels.boliviaMeta}
               heading={labels.activeDepartures}
               active={onExpeditions}
-              boliviaActive={rest.startsWith('/bolivia-2027')}
+              boliviaActive={rest.endsWith('/bolivia-2027')}
             />
             {links.map((link) => (
               <Link
@@ -169,9 +169,9 @@ export function Header({ locale, labels }: HeaderProps) {
               {labels.expeditions}
             </MobileLink>
             <Link
-              href={`/${locale}/bolivia-2027`}
+              href={`/${locale}/salidas-grupales/bolivia-2027`}
               onClick={() => setOpen(false)}
-              aria-current={rest.startsWith('/bolivia-2027') ? 'page' : undefined}
+              aria-current={rest.endsWith('/bolivia-2027') ? 'page' : undefined}
               className="-mt-1 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-b border-black/10 pb-5 pl-5"
             >
               <span className="font-display text-2xl italic">{labels.bolivia}</span>
@@ -368,7 +368,7 @@ function GroupDeparturesMenu({
           <ul>
             <li>
               <Link
-                href={`/${locale}/bolivia-2027`}
+                href={`/${locale}/salidas-grupales/bolivia-2027`}
                 aria-current={boliviaActive ? 'page' : undefined}
                 className="group/item flex items-center justify-between gap-4 px-4 py-3 transition-colors hover:bg-salt focus-visible:bg-salt"
               >

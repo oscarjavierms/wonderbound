@@ -1,3 +1,4 @@
+import { boliviaEn } from './bolivia-en'
 import type { Dictionary } from './es'
 
 export const en: Dictionary = {
@@ -222,101 +223,7 @@ export const en: Dictionary = {
       imageAlt: 'Kelly on the Uyuni Salt Flat, beneath a deep blue sky and an endless horizon.',
     },
   },
-  bolivia: {
-    eyebrow: 'Expedition · Bolivia 2027',
-    name: 'At the Height of Dreams — Bolivia 2027',
-    hero: {
-      title: 'Bolivia, at the height of dreams.',
-      paragraphs: [
-        "A journey through some of Bolivia's most extraordinary landscapes. From La Paz to the vastness of the Uyuni Salt Flat, this expedition takes us through deserts, high-Andean lagoons, volcanoes and starry skies.",
-        'Seven days to discover a land that feels like another world, share the road and keep the memories of an experience that goes far beyond photographs.',
-      ],
-      imageAlt: 'Kelly on the Uyuni Salt Flat under an intense blue sky, reflected in the water.',
-    },
-    facts: {
-      dates: { label: 'Dates', value: 'March 22–28, 2027' },
-      duration: { label: 'Duration', value: '7 days / 6 nights' },
-      price: { label: 'Price', value: 'USD 1,385 per person' },
-      group: { label: 'Group', value: 'Small group' },
-    },
-    route: {
-      eyebrow: 'The route',
-      title: 'From La Paz to the vastness of the salt flat.',
-      items: [
-        { title: 'La Paz', text: 'City tour and a visit to the Valley of the Moon.' },
-        { title: 'Uyuni Salt Flat', text: 'A journey across the salt flat and the stargazing tour.' },
-        { title: 'Altiplano', text: 'High-Andean lagoons, deserts, volcanoes and other contracted sites.' },
-        { title: 'On the road', text: 'Premium 180° sleeper bus journeys on the specified legs.' },
-      ],
-      pending:
-        'The day-by-day itinerary will be published once it is confirmed with the operator. Message us and we will share the most up-to-date information.',
-    },
-    includes: {
-      title: 'Included',
-      note: 'As per contract and subject to final validation.',
-      items: [
-        'Lodging for all six nights.',
-        'Ground transportation included, plus premium 180° sleeper buses on the specified legs.',
-        'Internal transfers.',
-        'Excursions and activities expressly included.',
-        'Journey across the Uyuni Salt Flat and the stargazing tour.',
-        'Visit to high-Andean lagoons and other contracted sites.',
-        'Local guides and operators.',
-        'Meals expressly stated in the itinerary.',
-        'Entrance fees included in the program.',
-        'Coordination and accompaniment by Wonderbound.',
-        'Kelly joining as photographer and content creator.',
-        'Ten professional digital photographs per traveler.',
-        'City tour and visit to the Valley of the Moon in La Paz.',
-      ],
-    },
-    excludes: {
-      title: 'Not included',
-      items: [
-        'Domestic or international airfare.',
-        'Travel insurance, which is mandatory.',
-        'Passport, visas and personal documentation.',
-        'Medical expenses or medication not covered by insurance.',
-        'Meals not specified as included.',
-        'Alcoholic beverages, tips and personal expenses.',
-        'Additional services or individual changes.',
-        'Services not expressly listed as included.',
-      ],
-    },
-    payments: {
-      eyebrow: 'Price and payments',
-      title: 'USD 1,385 per person, in three payments.',
-      steps: [
-        { label: 'Deposit', amount: 'USD 300', when: 'At booking' },
-        { label: 'Second payment', amount: 'USD 600', when: 'Before December 20, 2026' },
-        { label: 'Final payment', amount: 'USD 485', when: 'Before January 31, 2027' },
-      ],
-      note: 'A reservation is only confirmed once the corresponding payment is received and the agency issues its confirmation. The deposit is applied to the total and is subject to the contract and its cancellation policy.',
-    },
-    important: {
-      title: 'Important information',
-      items: [
-        'Shared rooms for two or three travelers, subject to availability.',
-        'Single room at an additional cost, subject to availability.',
-        'Each traveler receives ten digital photographs selected by Kelly; the full set of captured material and a private session are not included.',
-        'The mirror effect on the salt flat and sightings of specific wildlife are not guaranteed.',
-        'The route includes high-altitude areas; insurance must cover the conditions and activities of the expedition.',
-        'The itinerary may change for operational, weather, safety or availability reasons, or force majeure.',
-      ],
-    },
-    gallery: {
-      alts: [
-        'Silhouette of a woman in a hat on the Uyuni Salt Flat, under a violet and pink sky.',
-        'A llama on green grass in front of reddish rock formations.',
-        'A white off-road vehicle reflected on the Uyuni Salt Flat.',
-        'The Milky Way across a night sky.',
-      ],
-    },
-    cta: {
-      title: 'Reserve your place in Bolivia 2027.',
-      text: 'Message us and we will answer your questions before you reserve.',
-    },
-  },
+  bolivia: boliviaEn,
   contact: {
     title: "Let's talk about your next journey.",
     text: 'Want to know more about Bolivia 2027 or get information about future expeditions? Write to us. We will help you answer your questions and find the information you need before you reserve.',
