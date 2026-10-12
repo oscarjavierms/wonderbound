@@ -1,3 +1,5 @@
+import { boliviaEs } from './bolivia-es'
+
 export const es = {
   meta: {
     siteName: 'Wonderbound Journeys',
@@ -220,101 +222,7 @@ export const es = {
       imageAlt: 'Kelly sobre el Salar de Uyuni, con un cielo azul profundo y un horizonte infinito.',
     },
   },
-  bolivia: {
-    eyebrow: 'Expedición · Bolivia 2027',
-    name: 'A la altura de los sueños — Bolivia 2027',
-    hero: {
-      title: 'Bolivia, a la altura de los sueños.',
-      paragraphs: [
-        'Un viaje por algunos de los paisajes más extraordinarios de Bolivia. Desde La Paz hasta la inmensidad del Salar de Uyuni, esta expedición nos lleva a explorar desiertos, lagunas altiplánicas, volcanes y cielos estrellados.',
-        'Siete días para descubrir un territorio que parece de otro mundo, compartir el camino y conservar recuerdos de una experiencia que va mucho más allá de las fotografías.',
-      ],
-      imageAlt: 'Kelly sobre el Salar de Uyuni bajo un cielo azul intenso, con su reflejo en el agua.',
-    },
-    facts: {
-      dates: { label: 'Fechas', value: '22–28 de marzo de 2027' },
-      duration: { label: 'Duración', value: '7 días / 6 noches' },
-      price: { label: 'Precio', value: 'USD 1.385 por persona' },
-      group: { label: 'Grupo', value: 'Grupo reducido' },
-    },
-    route: {
-      eyebrow: 'El recorrido',
-      title: 'De La Paz a la inmensidad del Salar.',
-      items: [
-        { title: 'La Paz', text: 'City tour y recorrido por el Valle de la Luna.' },
-        { title: 'Salar de Uyuni', text: 'Recorrido por el salar y tour de las estrellas.' },
-        { title: 'Altiplano', text: 'Lagunas altiplánicas, desiertos, volcanes y otros lugares contratados.' },
-        { title: 'En el camino', text: 'Trayectos en bus cama premium 180° en los tramos especificados.' },
-      ],
-      pending:
-        'El itinerario día a día se publicará cuando esté confirmado con el operador. Escríbenos y te daremos la información más actualizada.',
-    },
-    includes: {
-      title: 'Incluye',
-      note: 'Según contrato y sujeto a validación final.',
-      items: [
-        'Alojamiento durante las seis noches.',
-        'Transporte terrestre incluido y buses cama premium 180° en los trayectos especificados.',
-        'Traslados internos.',
-        'Excursiones y actividades expresamente incluidas.',
-        'Recorrido por el Salar de Uyuni y tour de las estrellas.',
-        'Visita a lagunas altiplánicas y otros lugares contratados.',
-        'Guías y operadores locales.',
-        'Alimentación expresamente indicada en el itinerario.',
-        'Entradas incluidas en el programa.',
-        'Coordinación y acompañamiento de Wonderbound.',
-        'Acompañamiento de Kelly como fotógrafa y creadora de contenido.',
-        'Diez fotografías profesionales digitales por pasajero.',
-        'City tour y recorrido por el Valle de la Luna en La Paz.',
-      ],
-    },
-    excludes: {
-      title: 'No incluye',
-      items: [
-        'Tiquetes aéreos nacionales o internacionales.',
-        'Seguro de viaje, obligatorio.',
-        'Pasaporte, visas y documentación personal.',
-        'Gastos médicos o medicamentos no cubiertos por el seguro.',
-        'Alimentación no especificada como incluida.',
-        'Bebidas alcohólicas, propinas y gastos personales.',
-        'Servicios adicionales o modificaciones individuales.',
-        'Servicios no indicados expresamente como incluidos.',
-      ],
-    },
-    payments: {
-      eyebrow: 'Precio y pagos',
-      title: 'USD 1.385 por persona, en tres pagos.',
-      steps: [
-        { label: 'Reserva', amount: 'USD 300', when: 'Al reservar' },
-        { label: 'Segundo pago', amount: 'USD 600', when: 'Antes del 20 de diciembre de 2026' },
-        { label: 'Pago final', amount: 'USD 485', when: 'Antes del 31 de enero de 2027' },
-      ],
-      note: 'Una reserva solo se confirma tras recibir el pago correspondiente y emitir la confirmación de la agencia. La reserva se abona al total y está sujeta al contrato y su política de cancelación.',
-    },
-    important: {
-      title: 'Información importante',
-      items: [
-        'Habitaciones compartidas para dos o tres viajeros, según disponibilidad.',
-        'Habitación individual con coste adicional, sujeta a disponibilidad.',
-        'Cada pasajero recibe diez fotografías digitales seleccionadas por Kelly; no se incluye todo el material capturado ni una sesión privada.',
-        'No se garantiza el efecto espejo del Salar ni el avistamiento de fauna específica.',
-        'El recorrido incluye zonas de altura; el seguro debe cubrir las condiciones y actividades de la expedición.',
-        'El itinerario puede cambiar por razones operativas, climáticas, de seguridad, disponibilidad o fuerza mayor.',
-      ],
-    },
-    gallery: {
-      alts: [
-        'Silueta de una mujer con sombrero sobre el Salar de Uyuni, con cielo violeta y rosa.',
-        'Una llama sobre pasto verde frente a formaciones rocosas rojizas.',
-        'Vehículo todoterreno blanco reflejado sobre el Salar de Uyuni.',
-        'La Vía Láctea sobre un cielo nocturno.',
-      ],
-    },
-    cta: {
-      title: 'Reserva tu lugar en Bolivia 2027.',
-      text: 'Escríbenos y resolvemos tus dudas antes de reservar.',
-    },
-  },
+  bolivia: boliviaEs,
   contact: {
     title: 'Hablemos de tu próximo viaje.',
     text: '¿Quieres conocer más sobre Bolivia 2027 o recibir información sobre futuras expediciones? Escríbenos. Te ayudaremos a resolver tus dudas y a encontrar la información que necesitas antes de reservar.',

@@ -5,7 +5,7 @@ export const routes = {
   expeditions: '/expeditions',
   destinations: '/destinations',
   about: '/about',
-  bolivia: '/bolivia-2027',
+  bolivia: '/salidas-grupales/bolivia-2027',
   terms: '/terms',
   privacy: '/privacy',
 } as const
@@ -42,6 +42,9 @@ export const photos = {
   sunsetOrange: { src: '/images/sunset-orange.jpg' },
   sunsetPurple: { src: '/images/sunset-purple.jpg' },
   salarWide: { src: '/images/salar-wide.jpg' },
+  laPaz: { src: '/images/la-paz.png' },
+  valleLuna: { src: '/images/valle-luna.png' },
+  geiseres: { src: '/images/geiseres.png' },
 } as const
 
 export const destinationCards = [
