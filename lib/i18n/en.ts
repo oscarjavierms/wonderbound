@@ -70,6 +70,7 @@ export const en: Dictionary = {
       availableBadge: 'Available to book',
       soonBadge: 'Coming soon',
       launchCta: 'See group departure',
+      soonCta: 'See destination',
       carouselLabel: 'Destinations',
       prev: 'Previous destination',
       next: 'Next destination',
@@ -167,37 +168,54 @@ export const en: Dictionary = {
     cards: [
       {
         name: 'Bolivia',
-        tagline: 'Salt flats, mirror waters and high-altitude skies.',
+        tagline:
+          "An expedition to the planet's largest white desert, colorful lagoons and the most breathtaking landscapes of the Altiplano.",
         alt: 'Uyuni Salt Flat under a pink sky, with the sky reflected in the water.',
       },
       {
-        name: 'Peru',
-        tagline: 'Machu Picchu and sacred valleys.',
-        alt: 'Inca terraces of Machu Picchu at sunrise, with Huayna Picchu mountain behind.',
-      },
-      {
-        name: 'Huayhuash',
-        tagline: 'Turquoise lagoons and sacred peaks.',
-        alt: 'Turquoise lagoon beneath the snowy peaks of the Huayhuash range in Peru.',
-      },
-      {
-        name: 'Patagonia',
-        tagline: 'Peaks, wind and ice.',
-        alt: 'Granite peaks of Patagonia above a lake at dawn.',
-      },
-      {
         name: 'Egypt',
-        tagline: 'Desert, temples and millennia.',
+        tagline:
+          'An ancient journey through legendary temples, the course of the Nile and the mighty Pyramids of Giza.',
         alt: 'The pyramids of Egypt above desert dunes at sunset.',
       },
       {
+        name: 'Peru',
+        tagline:
+          'Mysticism and culture in the sacred Andes, through ancestral valleys, signature cuisine and Machu Picchu.',
+        alt: 'Inca terraces of Machu Picchu at sunrise, with Huayna Picchu mountain behind.',
+      },
+      {
+        name: 'Jordan',
+        tagline:
+          'Stunning architecture carved in stone at Petra, the red desert of Wadi Rum and floating in the Dead Sea.',
+        alt: 'Traveler in a Jordanian landscape of rock architecture and desert.',
+      },
+      {
+        name: 'Patagonia',
+        tagline:
+          'The majesty of wild nature among ancient glaciers, granite towers and untamed valleys.',
+        alt: 'Granite peaks of Patagonia above a lake at dawn.',
+      },
+      {
+        name: 'Huayhuash',
+        tagline:
+          'Spectacular treks between snowy peaks and turquoise lagoons in one of the most beautiful mountain ranges in the world.',
+        alt: 'Turquoise lagoon beneath the snowy peaks of the Huayhuash range in Peru.',
+      },
+      {
         name: 'Lapland',
-        tagline: 'Aurora skies and white silence.',
+        tagline:
+          'Magic under the northern lights, snowy forests and the winter experience on the Arctic Circle.',
         alt: 'Northern lights over a snowy Lapland landscape.',
       },
     ],
     detail: {
-      galleryEyebrow: 'Gallery',
+      galleryEyebrow: 'Coming soon',
+      intro:
+        '{destination} is one of the next Wonderbound destinations. Browse the gallery and join the waitlist to be among the first to know when spots open.',
+      galleryTitle: 'This is {destination}',
+      galleryAlt: '{destination}: photograph {n}',
+      noGallery: "We're preparing the photo gallery for {destination}. You'll be able to browse it here very soon.",
       soon: "We're preparing the photo gallery for {destination}. You'll be able to browse it here very soon.",
       back: 'See all destinations',
       ask: 'Tell me about {destination}',

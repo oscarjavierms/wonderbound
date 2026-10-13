@@ -14,6 +14,16 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/:lang/destinos/:slug*',
+        destination: '/:lang/destinations/:slug*',
+        permanent: true,
+      },
+      {
+        source: '/:lang/sobre-nosotros',
+        destination: '/:lang/about',
+        permanent: true,
+      },
+      {
         source: '/:lang/salidas-grupales',
         destination: '/:lang/expeditions',
         permanent: true,

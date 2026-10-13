@@ -53,14 +53,76 @@ export const photos = {
   geiseres: { src: '/images/geiseres.png' },
 } as const
 
+export type GalleryPhoto = { src: string; wide?: boolean }
+
+function gallery(...entries: (string | GalleryPhoto)[]): GalleryPhoto[] {
+  return entries.map((entry) =>
+    typeof entry === 'string' ? { src: `/images/${entry}` } : { ...entry, src: `/images/${entry.src}` },
+  )
+}
+
+// El orden debe coincidir con `destinations.cards` de los diccionarios.
 export const destinationCards = [
-  { id: 'bolivia', src: '/images/salar-pink.jpg' },
-  { id: 'peru', src: '/images/dest-peru.png' },
-  { id: 'huayhuash', src: '/images/dest-huayhuash.png' },
-  { id: 'patagonia', src: '/images/dest-patagonia.png' },
-  { id: 'egipto', src: '/images/dest-egipto.png' },
-  { id: 'laponia', src: '/images/dest-laponia.png' },
+  { id: 'bolivia', src: '/images/salar-pink.jpg', available: true, gallery: [] as GalleryPhoto[] },
+  {
+    id: 'egipto',
+    src: '/images/dest-egipto.png',
+    available: false,
+    gallery: gallery('E1.JPG', 'E2.JPG', 'E3.JPG', 'E4.JPG', 'E5.JPG', 'E6.JPG', { src: 'E7.JPG', wide: true }, 'E8.jpg'),
+  },
+  {
+    id: 'peru',
+    src: '/images/dest-peru.png',
+    available: false,
+    gallery: gallery(
+      'Peru1.jpg',
+      'Peru2.jpg',
+      'Peru3.jpg',
+      'Peru4.jpg',
+      'Peru5.JPG',
+      'Peru6.JPG',
+      'Peru7.JPG',
+      'Peru8.JPG',
+      'Peru9.JPG',
+      'Peru10.jpg',
+    ),
+  },
+  {
+    id: 'jordania',
+    src: '/images/J1.JPG',
+    available: false,
+    gallery: gallery('J1.JPG', 'J2.JPG', 'J3.jpg', 'J4.jpg', 'J5.JPG', { src: 'J6.JPG', wide: true }, 'J7.JPG'),
+  },
+  {
+    id: 'patagonia',
+    src: '/images/dest-patagonia.png',
+    available: false,
+    gallery: gallery('P1.JPG', 'P2.JPG', 'P3.JPG', 'P4.jpg', 'P5.jpg', 'P6.jpg', 'P7.JPG', 'P8.jpg'),
+  },
+  {
+    id: 'huayhuash',
+    src: '/images/dest-huayhuash.png',
+    available: false,
+    gallery: gallery(
+      'H1.JPG',
+      'H2.JPG',
+      'H4.JPG',
+      'H5.JPG',
+      'H6.JPG',
+      'H7.JPG',
+      'H8.JPG',
+      'H9.JPG',
+      'H10.JPG',
+      'H3.jpg',
+      'H11.jpg',
+    ),
+  },
+  { id: 'laponia', src: '/images/dest-laponia.png', available: false, gallery: [] as GalleryPhoto[] },
 ] as const
+
+export function destinationHref(locale: Locale, id: DestinationId) {
+  return id === 'bolivia' ? href(locale, 'bolivia') : `/${locale}${routes.destinations}/${id}`
+}
 
 // Ruta de la foto de perfil por testimonio, en el mismo orden del diccionario. null muestra iniciales.
 export const testimonialAvatars: (string | null)[] = [null, null]
