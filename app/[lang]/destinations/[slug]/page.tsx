@@ -1,11 +1,12 @@
 import Link from 'next/link'
-import { notFound } from 'next/navigation'
+import { notFound, redirect } from 'next/navigation'
+import { WaitlistForm } from '@/components/home/waitlist-form'
 import { ClosingCta } from '@/components/site/closing-cta'
 import { PageHeader } from '@/components/site/page-header'
 import { Photo } from '@/components/site/photo'
-import { ButtonLink, Container } from '@/components/site/ui'
+import { Container } from '@/components/site/ui'
 import { getDictionary, hasLocale, locales } from '@/lib/i18n/config'
-import { destinationCards, href, whatsappUrl } from '@/lib/site'
+import { destinationCards, href } from '@/lib/site'
 
 type Params = Promise<{ lang: string; slug: string }>
 
@@ -30,6 +31,7 @@ export default async function DestinationPage({ params }: { params: Params }) {
   const { lang, slug } = await params
   const found = findDestination(slug)
   if (!hasLocale(lang) || !found) notFound()
+  if (found.card.id === 'bolivia') redirect(href(lang, 'bolivia'))
   const dict = getDictionary(lang)
   const d = dict.destinations
   const info = d.cards[found.index]
@@ -51,13 +53,16 @@ export default async function DestinationPage({ params }: { params: Params }) {
               {d.detail.soon.replace('{destination}', info.name)}
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-6">
-              <ButtonLink
-                href={whatsappUrl(dict.whatsapp.destination.replace('{destination}', info.name))}
-                external
-                variant="dark"
-              >
-                {d.detail.ask.replace('{destination}', info.name)}
-              </ButtonLink>
+              <div className="w-full max-w-md rounded-sm border border-ink/10 bg-card p-6 md:p-8">
+                <h2 className="text-2xl">{d.waitlist.title.replace('{destination}', info.name)}</h2>
+                <p className="mb-6 mt-2 text-sm leading-relaxed text-muted-foreground">{d.waitlist.text}</p>
+                <WaitlistForm
+                  destination={info.name}
+                  copy={d.waitlist}
+                  message={dict.whatsapp.waitlist}
+                  details={dict.whatsapp.waitlistDetails}
+                />
+              </div>
               <Link
                 href={href(lang, 'destinations')}
                 className="eyebrow border-b border-current py-1 focus-visible:outline-2 focus-visible:outline-offset-4"

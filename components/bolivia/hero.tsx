@@ -1,4 +1,4 @@
-import { Banknote, Calendar, Camera, Users } from 'lucide-react'
+import { Banknote, Calendar, Camera, Plane, Users } from 'lucide-react'
 import { Photo } from '@/components/site/photo'
 import { ButtonLink, Container } from '@/components/site/ui'
 import type { Dictionary } from '@/lib/i18n/es'
@@ -9,6 +9,7 @@ export function BoliviaHero({ b }: { b: Dictionary['bolivia'] }) {
     { icon: Calendar, text: b.facts.dates },
     { icon: Camera, text: b.facts.photos },
     { icon: Banknote, text: b.facts.price },
+    { icon: Plane, text: b.facts.flights },
   ]
 
   return (

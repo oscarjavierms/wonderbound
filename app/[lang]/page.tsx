@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation'
 import { BoliviaBanner } from '@/components/home/bolivia-banner'
+import { BrandClosing } from '@/components/home/brand-closing'
 import { DestinationsTeaser } from '@/components/home/destinations-teaser'
 import { Finale } from '@/components/home/finale'
 import { Gallery } from '@/components/home/gallery'
@@ -21,6 +22,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       <Gallery locale={lang} />
       <Testimonials locale={lang} />
       <Finale locale={lang} />
+      <BrandClosing locale={lang} />
     </>
   )
 }

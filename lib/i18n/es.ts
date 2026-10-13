@@ -45,6 +45,9 @@ export const es = {
   },
   whatsapp: {
     destination: 'Hola, me gustaría saber de una futura salida a {destination} con Wonderbound.',
+    waitlist:
+      'Hola Kelly! Me interesa sumarme a la lista de espera para la próxima expedición a {destination}. Avísame cuando abran cupos.',
+    waitlistDetails: 'Soy {name}, escribo desde {country}. Mi WhatsApp: {phone}.',
     floatingLabel: 'Escríbenos por WhatsApp',
     general: 'Hola, quiero conocer más sobre las expediciones de Wonderbound Journeys.',
     bolivia:
@@ -61,7 +64,8 @@ export const es = {
       eyebrow: 'Destinos',
       title: 'Lugares que nos llaman.',
       cta: 'Ver todos los destinos',
-      launchBadge: '¡Nuevo lanzamiento!',
+      availableBadge: 'Disponible para reservar',
+      soonBadge: 'Próximo lanzamiento',
       launchCta: 'Ver salida grupal',
       carouselLabel: 'Destinos',
       prev: 'Destino anterior',
@@ -78,10 +82,10 @@ export const es = {
       imageAlt: 'Vehículo todoterreno blanco reflejado sobre el espejo de agua del Salar de Uyuni.',
     },
     bolivia: {
-      eyebrow: 'Próxima salida grupal · 2027',
-      title: 'Bolivia 2027: El Espejo del Cielo',
-      text: 'Una expedición fotográfica inmersiva por el Salar de Uyuni y los paisajes del altiplano.',
-      cta: 'Descubrir Expedición Bolivia',
+      eyebrow: 'Disponible para reservar · Marzo 2027',
+      title: 'A la altura de los sueños',
+      text: 'Siete días por el Altiplano boliviano: Valle de la Luna, el Salar de Uyuni, lagunas de colores y volcanes, en grupo reducido y con Kelly detrás de la cámara.',
+      cta: 'Ver expedición Bolivia 2027',
       imageAlt: 'Vehículo todoterreno blanco reflejado sobre el espejo de agua del Salar de Uyuni.',
     },
     kelly: {
@@ -195,6 +199,25 @@ export const es = {
       ask: 'Cuéntame de {destination}',
     },
     note: 'Los destinos son inspiración y no representan salidas confirmadas.',
+    waitlist: {
+      cta: 'Unirme a la lista de espera',
+      title: 'Lista de espera: {destination}',
+      text: 'Déjanos tus datos y abrimos WhatsApp con tu mensaje listo para que Kelly te avise cuando abran cupos.',
+      name: 'Nombre',
+      namePlaceholder: 'Tu nombre',
+      country: 'País',
+      countryPlaceholder: 'Colombia',
+      phone: 'WhatsApp',
+      phonePlaceholder: '+57 300 000 0000',
+      submit: 'Avisarme por WhatsApp',
+      close: 'Cerrar',
+      privacy: 'Se abrirá WhatsApp con tus datos. No los guardamos.',
+      errors: {
+        name: 'Escribe tu nombre.',
+        country: 'Indica tu país.',
+        phone: 'Escribe un número de WhatsApp válido, con código de país.',
+      },
+    },
   },
   about: {
     eyebrow: 'Wonderbound Journeys',

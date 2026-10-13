@@ -1,4 +1,4 @@
-import { Check, X } from 'lucide-react'
+import { Check, Plane, X } from 'lucide-react'
 import { Container } from '@/components/site/ui'
 import type { Dictionary } from '@/lib/i18n/es'
 
@@ -16,6 +16,10 @@ export function BoliviaIncludes({ b }: { b: Dictionary['bolivia'] }) {
                   {item}
                 </li>
               ))}
+              <li className="flex gap-3 leading-relaxed">
+                <Plane aria-hidden="true" className="mt-1 size-5 shrink-0 text-terracotta" />
+                {b.includes.flightsAdvice}
+              </li>
             </ul>
           </div>
           <div className="rounded-sm border border-ink/10 bg-card p-6 md:p-10">
