@@ -16,6 +16,8 @@ export const boliviaEs = {
     dates: '22 al 28 de marzo, 2027',
     photos: 'Fotos profesionales por Kelly',
     price: 'US$ 1.385 por persona',
+    flights:
+      'Asesoramiento personalizado en la búsqueda y compra de vuelos internacionales incluido en el plan.',
   },
   photos: {
     eyebrow: 'Fotografía',
@@ -86,6 +88,8 @@ export const boliviaEs = {
   },
   includes: {
     title: 'Qué incluye',
+    flightsAdvice:
+      'Asesoramiento personalizado en la búsqueda y compra de vuelos internacionales incluido en el plan.',
     items: [
       'Guía en español.',
       'Traslados privados y recorridos en 4x4.',

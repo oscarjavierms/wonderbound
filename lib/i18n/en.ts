@@ -46,6 +46,9 @@ export const en: Dictionary = {
   },
   whatsapp: {
     destination: 'Hi, I would like to hear about a future Wonderbound departure to {destination}.',
+    waitlist:
+      'Hi Kelly! I would like to join the waitlist for the next expedition to {destination}. Let me know when spots open.',
+    waitlistDetails: "I'm {name}, writing from {country}. My WhatsApp: {phone}.",
     floatingLabel: 'Message us on WhatsApp',
     general: 'Hi, I would like to learn more about the Wonderbound Journeys expeditions.',
     bolivia:
@@ -62,7 +65,8 @@ export const en: Dictionary = {
       eyebrow: 'Destinations',
       title: 'Places that call to us.',
       cta: 'See all destinations',
-      launchBadge: 'New launch!',
+      availableBadge: 'Available to book',
+      soonBadge: 'Coming soon',
       launchCta: 'See group departure',
       carouselLabel: 'Destinations',
       prev: 'Previous destination',
@@ -79,10 +83,10 @@ export const en: Dictionary = {
       imageAlt: 'White off-road vehicle reflected on the mirror-like water of the Uyuni Salt Flat.',
     },
     bolivia: {
-      eyebrow: 'Next group departure · 2027',
-      title: 'Bolivia 2027: The Mirror of the Sky',
-      text: 'An immersive photography expedition across the Uyuni Salt Flat and the landscapes of the altiplano.',
-      cta: 'Discover the Bolivia Expedition',
+      eyebrow: 'Available to book · March 2027',
+      title: 'At the height of dreams',
+      text: 'Seven days across the Bolivian Altiplano: Valley of the Moon, the Uyuni Salt Flat, colorful lagoons and volcanoes, in a small group with Kelly behind the camera.',
+      cta: 'See the Bolivia 2027 expedition',
       imageAlt: 'White off-road vehicle reflected on the mirror-like water of the Uyuni Salt Flat.',
     },
     kelly: {
@@ -196,6 +200,25 @@ export const en: Dictionary = {
       ask: 'Tell me about {destination}',
     },
     note: 'Destinations are inspiration and do not represent confirmed departures.',
+    waitlist: {
+      cta: 'Join the waitlist',
+      title: 'Waitlist: {destination}',
+      text: 'Leave your details and we will open WhatsApp with your message ready, so Kelly can let you know when spots open.',
+      name: 'Name',
+      namePlaceholder: 'Your name',
+      country: 'Country',
+      countryPlaceholder: 'United States',
+      phone: 'WhatsApp',
+      phonePlaceholder: '+1 555 000 0000',
+      submit: 'Notify me on WhatsApp',
+      close: 'Close',
+      privacy: 'WhatsApp will open with your details. We do not store them.',
+      errors: {
+        name: 'Please enter your name.',
+        country: 'Please enter your country.',
+        phone: 'Enter a valid WhatsApp number, including the country code.',
+      },
+    },
   },
   about: {
     eyebrow: 'Wonderbound Journeys',

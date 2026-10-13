@@ -18,6 +18,7 @@ export const boliviaEn: typeof boliviaEs = {
     dates: 'March 22–28, 2027',
     photos: 'Professional photos by Kelly',
     price: 'US$ 1,385 per person',
+    flights: 'Personalized advice on searching for and booking international flights is included in the plan.',
   },
   photos: {
     eyebrow: 'Photography',
@@ -88,6 +89,8 @@ export const boliviaEn: typeof boliviaEs = {
   },
   includes: {
     title: "What's included",
+    flightsAdvice:
+      'Personalized advice on searching for and booking international flights is included in the plan.',
     items: [
       'Spanish-speaking guide.',
       'Private transfers and 4x4 journeys.',
