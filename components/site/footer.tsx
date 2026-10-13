@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import { getDictionary, type Locale } from '@/lib/i18n/config'
-import { business, href, whatsappUrl } from '@/lib/site'
+import { business, href, social, whatsappUrl } from '@/lib/site'
 import { Container } from '@/components/site/ui'
+import { InstagramLink } from '@/components/site/instagram-link'
 
 export function Footer({ locale }: { locale: Locale }) {
   const dict = getDictionary(locale)
@@ -26,6 +27,12 @@ export function Footer({ locale }: { locale: Locale }) {
               Journeys
             </p>
             <p className="mt-6 font-display text-2xl italic">{dict.signature}</p>
+            <InstagramLink
+              href={social.agencyInstagram}
+              label={dict.nav.instagram}
+              className="-ml-2 mt-4"
+              iconClassName="size-6"
+            />
           </div>
 
           <nav aria-label={dict.footer.explore} className="md:col-span-3">
@@ -64,10 +71,10 @@ export function Footer({ locale }: { locale: Locale }) {
         </div>
 
         <div className="mt-14 flex flex-col gap-4 border-t border-border pt-6 text-sm text-muted-foreground md:flex-row md:items-center md:justify-between">
-          <p>
+          <p className="text-base font-semibold text-ink md:text-lg">
             © {year} {business.tradeName} · RNT {business.rnt}
           </p>
-          <ul className="flex flex-wrap gap-x-6 gap-y-2">
+          <ul className="flex flex-wrap items-center gap-x-6 gap-y-2">
             <li>
               <Link href={href(locale, 'terms')} className="hover:text-ink">
                 {dict.footer.terms}

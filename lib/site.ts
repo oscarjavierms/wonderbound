@@ -25,6 +25,11 @@ export const business = {
   whatsappDisplay: '+57 318 974 0603',
 } as const
 
+export const social = {
+  agencyInstagram: 'https://www.instagram.com/wonderbound_journeys',
+  founderInstagram: 'https://www.instagram.com/dondeesta_kelly',
+} as const
+
 export function whatsappUrl(message: string) {
   return `https://wa.me/${business.whatsappNumber}?text=${encodeURIComponent(message)}`
 }
@@ -32,6 +37,7 @@ export function whatsappUrl(message: string) {
 export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://wonderboundjourneys.com'
 
 export const photos = {
+  founder: { src: '/images/Fundadora.jpg' },
   stars: { src: '/images/stars.jpg', width: 1079, height: 1616 },
   salarPoncho: { src: '/images/salar-poncho.jpg' },
   desertRock: { src: '/images/desert-rock.jpg' },

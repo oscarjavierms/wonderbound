@@ -82,6 +82,10 @@
   h3 {
     @apply font-display font-normal tracking-tight text-balance;
   }
+  p {
+    text-align: justify;
+    hyphens: auto;
+  }
   ::selection {
     background: var(--terracotta);
     color: white;
