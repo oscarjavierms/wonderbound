@@ -32,6 +32,7 @@ export const en: Dictionary = {
     switchTo: 'Cambiar a español',
     switchToEn: 'Switch to English',
     skip: 'Skip to content',
+    instagram: 'Wonderbound Journeys on Instagram',
   },
   cta: {
     discoverBolivia: 'Discover Bolivia 2027',
@@ -56,6 +57,7 @@ export const en: Dictionary = {
   },
   home: {
     hero: {
+      brand: 'Come wonder with us.',
       title: 'Journeys to live. Photos to remember.',
       text: 'Group expeditions to extraordinary places, with Kelly behind the camera.',
       imageAlt:
@@ -77,7 +79,7 @@ export const en: Dictionary = {
       title: 'Bolivia: at the height of dreams.',
       dates: 'March 22–28, 2027',
       duration: '7 days / 6 nights',
-      price: 'USD 1,385 per person',
+      price: 'USD 1,435 per person',
       labels: { dates: 'Dates', duration: 'Duration', price: 'Price' },
       description: 'Salt flats, lagoons and high-altitude skies. A small group, with Kelly behind the camera.',
       imageAlt: 'White off-road vehicle reflected on the mirror-like water of the Uyuni Salt Flat.',
@@ -92,6 +94,7 @@ export const en: Dictionary = {
     kelly: {
       eyebrow: 'The founder',
       title: "Hi, I'm Kelly.",
+      instagramLabel: 'Kelly on Instagram',
       paragraphs: [
         "I've spent more than eight years photographing extraordinary places in 45 countries, but I realized the most valuable part of travel isn't just showing the world, it's living it with you. At Wonderbound I stay behind the camera, capturing the authentic, unposed moments that almost always fall outside the frame. We design expeditions with real time to feel, connect and bring home memories that will last forever.",
       ],
@@ -147,7 +150,7 @@ export const en: Dictionary = {
     available: 'Available',
     bolivia: {
       title: 'Bolivia: at the height of dreams',
-      meta: 'March 22–28, 2027 · 7 days / 6 nights · USD 1,385 per person',
+      meta: 'March 22–28, 2027 · 7 days / 6 nights · USD 1,435 per person',
       text: 'Salt flats, lagoons and deserts under one of the most fascinating skies in South America.',
       imageAlt: 'Kelly standing on the Uyuni Salt Flat at dawn, wearing a striped poncho.',
     },
@@ -314,8 +317,8 @@ export const en: Dictionary = {
         {
           title: '1. Identification and contact',
           body: [
-            'Wonderbound Journeys, legally represented by Kelly Johana Vega Niño. NIT 1098730939-1 · RNT 300525.',
-            'Address: Diagonal 19 #153B-10, Torre 1, apartamento 1303, Floridablanca, Santander, Colombia. Email: dondeestakelly@gmail.com · WhatsApp: +57 318 974 0603.',
+            'Wonderbound Journeys · RNT 300525.',
+            'Email: dondeestakelly@gmail.com · WhatsApp: +57 318 974 0603.',
           ],
         },
         {
@@ -393,7 +396,7 @@ export const en: Dictionary = {
         {
           title: '1. Data controller',
           body: [
-            'Wonderbound Journeys, represented by Kelly Johana Vega Niño. Email: dondeestakelly@gmail.com.',
+            'Wonderbound Journeys · RNT 300525. Email: dondeestakelly@gmail.com.',
           ],
         },
         {

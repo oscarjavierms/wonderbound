@@ -2,9 +2,9 @@ import type { boliviaEs } from './bolivia-es'
 
 export const boliviaEn: typeof boliviaEs = {
   description:
-    'Group expedition to Bolivia, March 22–28, 2027: Valley of the Moon, Uyuni Salt Flat, lagoons, volcanoes and deserts, with professional photos by Kelly. Maximum 20 travelers.',
+    'Group expedition to Bolivia, March 22–28, 2027: Valley of the Moon, Uyuni Salt Flat, lagoons, volcanoes and deserts, with professional photos by Kelly. Small group.',
   eyebrow: 'Next group departure · 2027',
-  maxTravelers: 'Max. 20 travelers',
+  maxTravelers: 'Small group',
   name: 'Bolivia at the Height of Dreams — Bolivia 2027',
   hero: {
     title: 'Bolivia at the height of dreams',
@@ -17,7 +17,7 @@ export const boliviaEn: typeof boliviaEs = {
     label: 'At a glance',
     dates: 'March 22–28, 2027',
     photos: 'Professional photos by Kelly',
-    price: 'US$ 1,385 per person',
+    price: 'US$ 1,435 per person',
     flights: 'Personalized advice on searching for and booking international flights is included in the plan.',
   },
   photos: {
@@ -113,13 +113,13 @@ export const boliviaEn: typeof boliviaEs = {
     eyebrow: 'Investment',
     title: 'Investment and payment plan',
     totalLabel: 'Total',
-    total: 'US$ 1,385',
+    total: 'US$ 1,435',
     per: 'per person',
     stepsLabel: 'Payment milestones',
     steps: [
-      { label: 'Non-refundable deposit', amount: 'US$ 300', when: 'When you reserve your spot' },
-      { label: 'Second payment', amount: 'US$ 600', when: 'Before Dec 20, 2026' },
-      { label: 'Final payment', amount: 'US$ 485', when: 'Before Jan 31, 2027' },
+      { label: 'Spot reservation', amount: 'US$ 350', when: 'When you reserve your spot' },
+      { label: 'Second installment', amount: 'US$ 600', when: 'Before Dec 20, 2026' },
+      { label: 'Final balance', amount: 'US$ 485', when: 'Before Jan 31, 2027' },
     ],
     note: 'Your spot is confirmed once the deposit is received and the agency issues its confirmation. The deposit is applied to the total.',
   },
@@ -148,28 +148,24 @@ export const boliviaEn: typeof boliviaEs = {
     title: 'What people ask us most',
     items: [
       {
-        q: 'Are flights included?',
-        a: 'No. International flights are not included. Message us and we will guide you on the recommended dates and times to arrive in and leave La Paz.',
+        q: 'Where does this adventure begin and how do I get there?',
+        a: 'The trip officially begins in La Paz, Bolivia. We give you personalized advice on searching for and choosing your international flights so you pick the best route and arrive on time and stress-free.',
       },
       {
-        q: 'How do I reserve my spot?',
-        a: 'With the non-refundable US$ 300 deposit. Fill in the form at the end of this page, we chat on WhatsApp and send you the payment instructions. Your spot is confirmed once the payment is received and the agency issues its confirmation.',
+        q: 'Will we see the famous "mirror effect" on the Uyuni Salt Flat?',
+        a: 'We choose the travel dates to maximize the chances of witnessing the mirror effect. Since it is a 100% natural phenomenon that depends on the weather and each year\'s rains, we will do everything we can along the route to find the best conditions and live this experience.',
       },
       {
-        q: "What's the cancellation policy?",
-        a: 'The US$ 300 deposit is non-refundable. The remaining payments and any changes are subject to the contract and our terms and conditions, which you can read on the terms page. If in doubt, message us before reserving.',
+        q: 'What do the unspecified expenses cover?',
+        a: 'The vast majority of the logistics (lodging, private 4x4 transport, entrance fees and most meals) is already covered. Additional expenses are minimal and limited to the occasional free meal, personal snacks and souvenirs. We will give you an estimate of the suggested budget beforehand so you travel with total clarity.',
       },
       {
-        q: 'What about altitude sickness?',
-        a: 'La Paz and the salt flat sit above 3,600 m, and some points on the Altiplano exceed 4,800 m. That is why the first day is for acclimatization. We recommend staying hydrated, resting and checking with your doctor before traveling.',
+        q: 'Do I need previous photography experience or a professional camera?',
+        a: 'Not at all. This trip is designed to enjoy and connect with your surroundings. We have professional photography support throughout the journey to capture your best moments, and we share simple tips so you can take great photos with your phone or camera.',
       },
       {
         q: 'Can I travel solo?',
-        a: 'Yes. Many people join on their own and the group is small (maximum 20 travelers). Rooms are shared by two or three people; a single room costs extra and depends on availability.',
-      },
-      {
-        q: 'Do I need photography skills?',
-        a: 'No. Kelly guides you on how to pose and shares tips to get the most out of your camera or phone. All you need is the desire to enjoy.',
+        a: 'Absolutely! Most travelers join on their own. From the first day we create a warm, close and safe environment, so you will feel in good company from the start.',
       },
     ],
   },

@@ -5,6 +5,8 @@ import { usePathname } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
 import { ChevronDown, Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { InstagramLink } from '@/components/site/instagram-link'
+import { social } from '@/lib/site'
 import type { Locale } from '@/lib/i18n/config'
 
 type HeaderProps = {
@@ -21,6 +23,7 @@ type HeaderProps = {
     closeMenu: string
     mainNav: string
     language: string
+    instagram: string
   }
 }
 
@@ -130,6 +133,7 @@ export function Header({ locale, labels }: HeaderProps) {
           </nav>
 
           <div className="flex items-center gap-3 md:gap-5">
+            <InstagramLink href={social.agencyInstagram} label={labels.instagram} />
             <div className="max-sm:hidden">
               <LanguageSwitcher locale={locale} rest={rest} label={labels.language} />
             </div>

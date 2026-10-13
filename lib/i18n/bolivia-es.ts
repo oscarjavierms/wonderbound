@@ -1,8 +1,8 @@
 export const boliviaEs = {
   description:
-    'Expedición grupal a Bolivia del 22 al 28 de marzo de 2027: Valle de la Luna, Salar de Uyuni, lagunas, volcanes y desiertos, con fotos profesionales por Kelly. Máximo 20 viajeros.',
+    'Expedición grupal a Bolivia del 22 al 28 de marzo de 2027: Valle de la Luna, Salar de Uyuni, lagunas, volcanes y desiertos, con fotos profesionales por Kelly. Grupo reducido.',
   eyebrow: 'Próxima salida grupal · 2027',
-  maxTravelers: 'Máx. 20 viajeros',
+  maxTravelers: 'Grupo reducido',
   name: 'Bolivia a la altura de los sueños — Bolivia 2027',
   hero: {
     title: 'Bolivia a la altura de los sueños',
@@ -15,7 +15,7 @@ export const boliviaEs = {
     label: 'Ficha técnica',
     dates: '22 al 28 de marzo, 2027',
     photos: 'Fotos profesionales por Kelly',
-    price: 'US$ 1.385 por persona',
+    price: 'US$ 1.435 por persona',
     flights:
       'Asesoramiento personalizado en la búsqueda y compra de vuelos internacionales incluido en el plan.',
   },
@@ -112,13 +112,13 @@ export const boliviaEs = {
     eyebrow: 'Inversión',
     title: 'Inversión y plan de pagos',
     totalLabel: 'Total',
-    total: 'US$ 1.385',
+    total: 'US$ 1.435',
     per: 'por persona',
     stepsLabel: 'Hitos de pago',
     steps: [
-      { label: 'Reserva no reembolsable', amount: 'US$ 300', when: 'Al reservar tu cupo' },
-      { label: 'Segundo pago', amount: 'US$ 600', when: 'Antes del 20 dic 2026' },
-      { label: 'Pago final', amount: 'US$ 485', when: 'Antes del 31 ene 2027' },
+      { label: 'Reserva de cupo', amount: 'US$ 350', when: 'Al reservar tu cupo' },
+      { label: 'Segundo abono', amount: 'US$ 600', when: 'Antes del 20 dic 2026' },
+      { label: 'Saldo final', amount: 'US$ 485', when: 'Antes del 31 ene 2027' },
     ],
     note: 'Tu cupo se confirma al recibir la reserva y emitir la confirmación de la agencia. La reserva se abona al total.',
   },
@@ -147,28 +147,24 @@ export const boliviaEs = {
     title: 'Lo que más nos preguntan',
     items: [
       {
-        q: '¿Los vuelos están incluidos?',
-        a: 'No. Los vuelos internacionales no están incluidos. Escríbenos y te orientamos con las fechas y horarios recomendados para llegar y salir de La Paz.',
+        q: '¿Dónde comienza esta aventura y cómo llego?',
+        a: 'El viaje comienza oficialmente en La Paz, Bolivia. Te brindamos asesoramiento personalizado en la búsqueda y selección de tus vuelos internacionales para asegurarnos de que elijas la mejor ruta y llegues a tiempo y sin estrés.',
       },
       {
-        q: '¿Cómo aparto mi cupo?',
-        a: 'Con la reserva no reembolsable de US$ 300. Completa el formulario al final de esta página, hablamos por WhatsApp y te enviamos las instrucciones de pago. El cupo se confirma al recibir el pago y emitir la confirmación de la agencia.',
+        q: '¿Veremos el famoso "efecto espejo" en el Salar de Uyuni?',
+        a: 'Elegimos las fechas del viaje para maximizar las probabilidades de presenciar el efecto espejo. Al ser un fenómeno 100% natural que depende del clima y de las lluvias de cada año, haremos todo lo posible en el recorrido para buscar las mejores condiciones y vivir esta experiencia.',
       },
       {
-        q: '¿Cuál es la política de cancelación?',
-        a: 'La reserva de US$ 300 no es reembolsable. Los demás pagos y cualquier cambio están sujetos al contrato y a nuestros términos y condiciones, que puedes leer en la página de términos. Si tienes dudas, escríbenos antes de reservar.',
+        q: '¿Qué cubren los gastos no especificados?',
+        a: 'La gran mayoría de la logística (alojamiento, transportes privados 4x4, entradas y la mayor parte de las comidas) ya está cubierta. Los gastos adicionales son mínimos y se limitan únicamente a alguna comida libre, snacks personales y souvenirs. Te daremos una estimación previa del presupuesto sugerido para que viajes con total claridad.',
       },
       {
-        q: '¿Qué pasa con el mal de altura?',
-        a: 'La Paz y el Salar están por encima de los 3.600 m, y algunos puntos del Altiplano superan los 4.800 m. Por eso el primer día es de aclimatación. Te recomendamos hidratarte, descansar y consultar con tu médico antes de viajar.',
+        q: '¿Necesito experiencia previa en fotografía o una cámara profesional?',
+        a: 'Para nada. Este viaje está diseñado para disfrutar y conectar con el entorno. Contamos con acompañamiento fotográfico profesional durante todo el recorrido para capturar tus mejores momentos, además de compartirte tips sencillos para que logres grandes fotos con tu celular o cámara.',
       },
       {
-        q: '¿Puedo viajar solo/a?',
-        a: 'Sí. Muchas personas se suman solas y el grupo es pequeño (máximo 20 viajeros). Las habitaciones son compartidas para dos o tres personas; la habitación individual tiene un costo adicional y depende de la disponibilidad.',
-      },
-      {
-        q: '¿Necesito saber de fotografía?',
-        a: 'No. Kelly te guía para posar y te comparte tips para sacar el máximo provecho a tu cámara o a tu celular. Solo necesitas ganas de disfrutar.',
+        q: '¿Puedo viajar solo o sola?',
+        a: '¡Totalmente! La mayoría de los viajeros se suman de forma individual. Desde el primer día creamos un entorno cercano, cálido y seguro, por lo que te sentirás en compañía desde el inicio.',
       },
     ],
   },

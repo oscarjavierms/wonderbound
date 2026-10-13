@@ -20,10 +20,13 @@ export function Hero({ locale }: { locale: Locale }) {
         className="absolute inset-0 -z-10 bg-gradient-to-t from-ink/70 via-ink/10 to-ink/20"
       />
       <Container className="pb-16 pt-32 md:pb-24">
-        <h1 className="max-w-4xl text-5xl leading-[0.95] sm:text-7xl md:text-8xl">
-          {dict.home.hero.title}
+        <h1 className="font-display text-6xl italic leading-[0.95] sm:text-8xl md:text-9xl">
+          {dict.home.hero.brand}
         </h1>
-        <p className="mt-6 max-w-sm text-xs uppercase leading-relaxed tracking-[0.22em] text-white/85">
+        <h2 className="mt-6 max-w-3xl text-2xl leading-tight sm:text-4xl md:text-5xl">
+          {dict.home.hero.title}
+        </h2>
+        <p className="mt-6 max-w-sm text-left text-xs uppercase leading-relaxed tracking-[0.22em] text-white/85">
           {dict.home.hero.text}
         </p>
       </Container>

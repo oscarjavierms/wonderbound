@@ -31,6 +31,7 @@ export const es = {
     switchTo: 'Cambiar a español',
     switchToEn: 'Switch to English',
     skip: 'Saltar al contenido',
+    instagram: 'Instagram de Wonderbound Journeys',
   },
   cta: {
     discoverBolivia: 'Descubre Bolivia 2027',
@@ -55,6 +56,7 @@ export const es = {
   },
   home: {
     hero: {
+      brand: 'Come wonder with us.',
       title: 'Viajes para vivirlos. Fotos para recordarlos.',
       text: 'Expediciones grupales a lugares extraordinarios, con Kelly detrás de la cámara.',
       imageAlt:
@@ -76,7 +78,7 @@ export const es = {
       title: 'Bolivia: a la altura de los sueños.',
       dates: '22–28 de marzo de 2027',
       duration: '7 días / 6 noches',
-      price: 'USD 1.385 por persona',
+      price: 'USD 1.435 por persona',
       labels: { dates: 'Fechas', duration: 'Duración', price: 'Precio' },
       description: 'Salares, lagunas y cielos de altura. Un grupo reducido y Kelly detrás de la cámara.',
       imageAlt: 'Vehículo todoterreno blanco reflejado sobre el espejo de agua del Salar de Uyuni.',
@@ -91,6 +93,7 @@ export const es = {
     kelly: {
       eyebrow: 'La fundadora',
       title: 'Hola, soy Kelly.',
+      instagramLabel: 'Instagram de Kelly',
       paragraphs: [
         'Llevo más de ocho años fotografiando lugares extraordinarios en 45 países, pero entendí que lo más valioso de viajar no es solo mostrar el mundo, sino vivirlo contigo. En Wonderbound voy detrás de la cámara capturando los instantes auténticos y no posados que casi siempre se quedan fuera del encuadre. Diseñamos expediciones con tiempo real para sentir, conectar y llevarte recuerdos que permanecerán para siempre.',
       ],
@@ -146,7 +149,7 @@ export const es = {
     available: 'Disponible',
     bolivia: {
       title: 'Bolivia: a la altura de los sueños',
-      meta: '22–28 de marzo de 2027 · 7 días / 6 noches · USD 1.385 por persona',
+      meta: '22–28 de marzo de 2027 · 7 días / 6 noches · USD 1.435 por persona',
       text: 'Salares, lagunas y desiertos bajo uno de los cielos más fascinantes de Sudamérica.',
       imageAlt: 'Kelly de pie sobre el Salar de Uyuni al amanecer, con un poncho de rayas.',
     },
@@ -314,8 +317,8 @@ export const es = {
         {
           title: '1. Identificación y contacto',
           body: [
-            'Wonderbound Journeys, representada legalmente por Kelly Johana Vega Niño. NIT 1098730939-1 · RNT 300525.',
-            'Domicilio: Diagonal 19 #153B-10, Torre 1, apartamento 1303, Floridablanca, Santander, Colombia. Correo: dondeestakelly@gmail.com · WhatsApp: +57 318 974 0603.',
+            'Wonderbound Journeys · RNT 300525.',
+            'Correo: dondeestakelly@gmail.com · WhatsApp: +57 318 974 0603.',
           ],
         },
         {
@@ -393,7 +396,7 @@ export const es = {
         {
           title: '1. Responsable del tratamiento',
           body: [
-            'Wonderbound Journeys, representada por Kelly Johana Vega Niño. Correo: dondeestakelly@gmail.com.',
+            'Wonderbound Journeys · RNT 300525. Correo: dondeestakelly@gmail.com.',
           ],
         },
         {
