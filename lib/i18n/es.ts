@@ -69,6 +69,7 @@ export const es = {
       availableBadge: 'Disponible para reservar',
       soonBadge: 'Próximo lanzamiento',
       launchCta: 'Ver salida grupal',
+      soonCta: 'Ver destino',
       carouselLabel: 'Destinos',
       prev: 'Destino anterior',
       next: 'Destino siguiente',
@@ -166,37 +167,54 @@ export const es = {
     cards: [
       {
         name: 'Bolivia',
-        tagline: 'Salares, espejos de agua y cielos de altura.',
+        tagline:
+          'Expedición al desierto blanco más grande del planeta, lagunas de colores y los paisajes más imponentes del Altiplano.',
         alt: 'Salar de Uyuni bajo un cielo rosado, con el cielo reflejado en el agua.',
       },
       {
-        name: 'Perú',
-        tagline: 'Machu Picchu y valles sagrados.',
-        alt: 'Terrazas incas de Machu Picchu al amanecer, con la montaña Huayna Picchu al fondo.',
-      },
-      {
-        name: 'Huayhuash',
-        tagline: 'Lagunas turquesa y cumbres sagradas.',
-        alt: 'Laguna turquesa bajo las cumbres nevadas de la cordillera Huayhuash, en Perú.',
-      },
-      {
-        name: 'Patagonia',
-        tagline: 'Cumbres, viento y hielo.',
-        alt: 'Cumbres graníticas de la Patagonia sobre un lago al amanecer.',
-      },
-      {
         name: 'Egipto',
-        tagline: 'Desierto, templos y milenios.',
+        tagline:
+          'Una travesía milenaria descubriendo templos legendarios, el curso del Río Nilo y las imponentes Pirámides de Giza.',
         alt: 'Pirámides de Egipto sobre las dunas del desierto al atardecer.',
       },
       {
+        name: 'Perú',
+        tagline:
+          'Misticismo y cultura en los Andes sagrados, recorriendo valles ancestrales, gastronomía de autor y Machu Picchu.',
+        alt: 'Terrazas incas de Machu Picchu al amanecer, con la montaña Huayna Picchu al fondo.',
+      },
+      {
+        name: 'Jordania',
+        tagline:
+          'Deliciosa arquitectura esculpida en piedra en Petra, el desierto rojo de Wadi Rum y flotar en el Mar Muerto.',
+        alt: 'Viajera en un paisaje de Jordania, entre arquitectura y desierto de roca.',
+      },
+      {
+        name: 'Patagonia',
+        tagline:
+          'La majestuosidad de la naturaleza salvaje entre glaciares milenarios, torres de granito y valles indómitos.',
+        alt: 'Cumbres graníticas de la Patagonia sobre un lago al amanecer.',
+      },
+      {
+        name: 'Huayhuash',
+        tagline:
+          'Treks espectaculares entre picos nevados y lagunas turquesas en una de las cordilleras más bellas del mundo.',
+        alt: 'Laguna turquesa bajo las cumbres nevadas de la cordillera Huayhuash, en Perú.',
+      },
+      {
         name: 'Laponia',
-        tagline: 'Cielos de aurora y silencio blanco.',
+        tagline:
+          'Magia bajo las auroras boreales, bosques nevados y la experiencia invernal en el Círculo Polar Ártico.',
         alt: 'Aurora boreal sobre un paisaje nevado de Laponia.',
       },
     ],
     detail: {
-      galleryEyebrow: 'Galería',
+      galleryEyebrow: 'Próximo lanzamiento',
+      intro:
+        '{destination} es uno de los próximos destinos de Wonderbound. Mira la galería y únete a la lista de espera para ser de los primeros en saber cuándo abrimos cupos.',
+      galleryTitle: 'Así se ve {destination}',
+      galleryAlt: '{destination}: fotografía {n}',
+      noGallery: 'Estamos preparando la galería de fotos de {destination}. Muy pronto podrás recorrerla aquí.',
       soon: 'Estamos preparando la galería de fotos de {destination}. Muy pronto podrás recorrerla aquí.',
       back: 'Ver todos los destinos',
       ask: 'Cuéntame de {destination}',

@@ -1,10 +1,11 @@
 import { notFound } from 'next/navigation'
 import { ClosingCta } from '@/components/site/closing-cta'
+import { InstagramLink } from '@/components/site/instagram-link'
 import { Photo } from '@/components/site/photo'
 import { Container, Eyebrow } from '@/components/site/ui'
 import { getDictionary, hasLocale } from '@/lib/i18n/config'
 import { pageMetadata } from '@/lib/metadata'
-import { photos } from '@/lib/site'
+import { photos, social } from '@/lib/site'
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params
@@ -39,20 +40,28 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
       </section>
 
       <section className="border-t border-ink/10 py-20 md:py-32">
-        <Container className="grid items-center gap-12 lg:grid-cols-12 lg:gap-20">
-          <div className="lg:col-span-5">
+        <Container className="grid items-center gap-10 lg:grid-cols-12 lg:gap-16">
+          <div className="mx-auto w-full max-w-[15rem] lg:col-span-4 lg:max-w-[18rem]">
             <Photo
-              src={photos.salarWide.src}
+              src={photos.founder.src}
               alt={a.founder.imageAlt}
               className="aspect-[4/5] w-full rounded-sm"
-              sizes="(min-width: 1024px) 40vw, 100vw"
+              sizes="(min-width: 1024px) 18rem, 15rem"
+              position="center 20%"
               priority
             />
           </div>
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-7 lg:col-start-6">
             <Eyebrow>{a.founder.eyebrow}</Eyebrow>
             <h2 className="mt-6 max-w-2xl text-4xl leading-[1.05] md:text-6xl">{a.founder.title}</h2>
-            <p className="mt-8 font-display text-4xl italic">{a.founder.lead}</p>
+            <div className="mt-8 flex items-center gap-3">
+              <p className="font-display text-4xl italic">{a.founder.lead}</p>
+              <InstagramLink
+                href={social.founderInstagram}
+                label={dict.home.kelly.instagramLabel}
+                className="shrink-0 rounded-full border border-ink/20 text-ink"
+              />
+            </div>
             <div className="mt-6 max-w-2xl space-y-5 text-lg leading-relaxed text-muted-foreground">
               {a.founder.paragraphs.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
