@@ -32,7 +32,7 @@ type MobileNavProps = {
 const INSTAGRAM_HANDLE = '@wonderbound_journeys'
 const FOCUSABLE = 'a[href], button:not([disabled])'
 const linkClass =
-  'inline-block font-display text-2xl leading-tight text-[#FBFBFB] transition-opacity hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-4 sm:text-3xl'
+  'inline-block font-display text-2xl font-light leading-tight text-neutral-900 transition-opacity hover:opacity-60 focus-visible:outline-2 focus-visible:outline-offset-4 sm:text-3xl'
 
 export function MobileNav({ open, onClose, locale, rest, returnFocusRef, labels }: MobileNavProps) {
   const panelRef = useRef<HTMLDivElement>(null)
@@ -83,34 +83,34 @@ export function MobileNav({ open, onClose, locale, rest, returnFocusRef, labels 
       <div
         ref={panelRef}
         className={cn(
-          'flex h-full w-full flex-col overflow-y-auto bg-[#121212] text-[#FBFBFB]',
-          'pb-[max(1.5rem,env(safe-area-inset-bottom))] pt-[env(safe-area-inset-top)]',
+          'relative flex h-full w-full flex-col overflow-y-auto bg-[#FBFBFB] text-neutral-900',
+          'pb-[max(2rem,env(safe-area-inset-bottom))] pt-[env(safe-area-inset-top)]',
           'transition-opacity duration-300 ease-out motion-reduce:transition-none',
           open ? 'opacity-100' : 'opacity-0',
         )}
       >
-        <div className="mx-auto flex h-16 w-full shrink-0 items-center justify-between gap-4 px-5">
+        <div className="absolute inset-x-0 top-[env(safe-area-inset-top)] flex h-16 items-center justify-between gap-4 px-8">
           <Link
             href={`/${locale}`}
             onClick={onClose}
             className="flex flex-col leading-none focus-visible:outline-2 focus-visible:outline-offset-4"
           >
-            <span className="font-display text-2xl tracking-tight">Wonderbound</span>
-            <span className="eyebrow mt-1 text-[0.6rem] tracking-[0.38em] text-[#FBFBFB]/75">Journeys</span>
+            <span className="font-display text-2xl tracking-tight text-neutral-900">Wonderbound</span>
+            <span className="eyebrow mt-1 text-[0.6rem] tracking-[0.38em] text-neutral-900/75">Journeys</span>
           </Link>
           <button
             ref={closeRef}
             type="button"
             aria-label={labels.closeMenu}
             onClick={onClose}
-            className="-mr-2 inline-flex size-10 items-center justify-center text-[#FBFBFB] focus-visible:outline-2 focus-visible:outline-offset-2"
+            className="-mr-2 inline-flex size-10 items-center justify-center text-neutral-900 focus-visible:outline-2 focus-visible:outline-offset-2"
           >
             <X aria-hidden="true" className="size-6" strokeWidth={1.25} />
           </button>
         </div>
 
-        <nav aria-label={labels.mainNav} className="flex flex-1 items-center justify-center px-5 py-8">
-          <ul className="space-y-7 text-center">
+        <nav aria-label={labels.mainNav} className="flex-1 px-8 pb-8 pt-24">
+          <ul className="space-y-6 text-left">
             <li>
               <Link
                 href={`/${locale}`}
@@ -134,12 +134,12 @@ export function MobileNav({ open, onClose, locale, rest, returnFocusRef, labels 
                 href={`/${locale}/salidas-grupales/bolivia-2027`}
                 onClick={onClose}
                 aria-current={current(boliviaActive)}
-                className="mx-auto mt-4 block w-fit border-l border-[#FBFBFB]/20 pl-4 text-left focus-visible:outline-2 focus-visible:outline-offset-4"
+                className="ml-1 mt-4 block w-fit border-l border-neutral-900/15 pl-4 text-left focus-visible:outline-2 focus-visible:outline-offset-4"
               >
-                <span className={cn('block font-display text-xl leading-tight text-[#FBFBFB]', boliviaActive && 'italic')}>
+                <span className={cn('block font-display text-xl font-light leading-tight text-neutral-900', boliviaActive && 'italic')}>
                   {labels.bolivia}
                 </span>
-                <span className="mt-1 block text-[0.65rem] uppercase tracking-[0.18em] text-neutral-400">
+                <span className="mt-1 block text-xs uppercase tracking-widest text-neutral-500">
                   {labels.boliviaMeta}
                 </span>
               </Link>
@@ -167,12 +167,12 @@ export function MobileNav({ open, onClose, locale, rest, returnFocusRef, labels 
           </ul>
         </nav>
 
-        <div className="flex shrink-0 items-center justify-between gap-4 px-5 text-sm text-neutral-400">
-          <LanguageSwitcher locale={locale} rest={rest} label={labels.language} className="text-sm text-neutral-400" />
+        <div className="flex shrink-0 items-center justify-between gap-4 px-8 text-sm text-neutral-500">
+          <LanguageSwitcher locale={locale} rest={rest} label={labels.language} className="text-sm text-neutral-900" />
           <InstagramLink
             href={social.agencyInstagram}
             label={labels.instagram}
-            className="size-auto gap-1.5 py-1 text-neutral-400 hover:text-[#FBFBFB] hover:opacity-100"
+            className="size-auto gap-1.5 py-1 text-neutral-500 hover:text-neutral-900 hover:opacity-100"
             iconClassName="size-3.5"
           >
             <span className="text-sm">{INSTAGRAM_HANDLE}</span>
