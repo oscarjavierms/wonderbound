@@ -5,9 +5,10 @@ type InstagramLinkProps = {
   label: string
   className?: string
   iconClassName?: string
+  children?: React.ReactNode
 }
 
-export function InstagramLink({ href, label, className, iconClassName }: InstagramLinkProps) {
+export function InstagramLink({ href, label, className, iconClassName, children }: InstagramLinkProps) {
   return (
     <a
       href={href}
@@ -33,6 +34,7 @@ export function InstagramLink({ href, label, className, iconClassName }: Instagr
         <circle cx="12" cy="12" r="4" />
         <circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" />
       </svg>
+      {children}
     </a>
   )
 }
