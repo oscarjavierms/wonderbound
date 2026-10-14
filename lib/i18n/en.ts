@@ -59,7 +59,7 @@ export const en: Dictionary = {
     hero: {
       brand: 'Come wonder with us.',
       title: 'Journeys to live. Photos to remember.',
-      text: 'The vision behind Wonderbound. A way of traveling that blends exploration, visual sensitivity and photography, to discover each destination and keep memories that go beyond a postcard.',
+      text: 'Exploration, visual sensitivity and professional memories that go beyond a postcard.',
       imageAlt:
         'Silhouette of a woman in a hat on the Uyuni Salt Flat at sunset, reflected in the water.',
     },
