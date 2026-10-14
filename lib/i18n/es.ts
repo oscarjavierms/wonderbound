@@ -58,7 +58,7 @@ export const es = {
     hero: {
       brand: 'Come wonder with us.',
       title: 'Viajes para vivirlos. Fotos para recordarlos.',
-      text: 'La mirada detrás de Wonderbound. Una forma de viajar que une exploración, sensibilidad visual y fotografía, para descubrir cada destino y conservar recuerdos que van más allá de una postal.',
+      text: 'Exploración, sensibilidad visual y recuerdos profesionales que van más allá de una postal.',
       imageAlt:
         'Silueta de una mujer con sombrero sobre el Salar de Uyuni al atardecer, reflejada en el agua.',
     },

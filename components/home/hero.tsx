@@ -11,24 +11,24 @@ export function Hero({ locale }: { locale: Locale }) {
         src={photos.sunsetPurple.src}
         alt={dict.home.hero.imageAlt}
         className="absolute inset-0 -z-10"
+        imageClassName="object-[center_30%] md:object-[center_32%]"
         sizes="100vw"
         priority
-        position="center 25%"
       />
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-gradient-to-t from-ink/70 via-ink/10 to-ink/20"
+        className="absolute inset-0 -z-10 bg-gradient-to-t from-black/60 via-black/20 to-black/25"
       />
-      <Container className="pb-16 pt-32 md:pb-24">
-        <h1 className="font-display text-6xl italic leading-[0.95] sm:text-8xl md:text-9xl">
-          {dict.home.hero.brand}
-        </h1>
-        <h2 className="mt-6 max-w-3xl text-2xl leading-tight sm:text-4xl md:text-5xl">
-          {dict.home.hero.title}
-        </h2>
-        <p className="mt-6 max-w-sm text-left text-xs uppercase leading-relaxed tracking-[0.22em] text-white/85">
-          {dict.home.hero.text}
-        </p>
+      <Container className="pb-28 pt-32 md:pb-20">
+        <div className="max-w-sm">
+          <h1 className="font-display text-5xl italic leading-[0.98] sm:text-6xl">
+            {dict.home.hero.brand}
+          </h1>
+          <h2 className="mt-5 text-xl leading-snug sm:text-2xl">{dict.home.hero.title}</h2>
+          <p className="mt-4 text-left text-base leading-relaxed text-white/90">
+            {dict.home.hero.text}
+          </p>
+        </div>
       </Container>
     </section>
   )

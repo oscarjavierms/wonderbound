@@ -8,27 +8,27 @@ export function BoliviaBanner({ locale }: { locale: Locale }) {
   return (
     <section className="py-8 sm:py-16 md:py-24" aria-labelledby="bolivia-banner-title">
       <Container>
-        <div className="relative isolate overflow-hidden rounded-sm text-white">
+        <div className="relative isolate overflow-hidden rounded-sm bg-ink text-white md:min-h-[34rem]">
           <Photo
             src={photos.salarVehicle.src}
             alt={bolivia.imageAlt}
-            className="absolute inset-0 -z-10"
-            sizes="(min-width: 1280px) 1216px, 100vw"
-            position="center 60%"
+            className="h-72 w-full bg-ink sm:h-80 md:absolute md:inset-y-0 md:right-0 md:h-auto md:w-[62%]"
+            imageClassName="object-[center_50%]"
+            sizes="(min-width: 1280px) 760px, (min-width: 768px) 62vw, 100vw"
           />
           <div
             aria-hidden="true"
-            className="absolute inset-0 -z-10 bg-gradient-to-r from-ink/80 via-ink/40 to-ink/5 max-md:bg-gradient-to-t max-md:from-ink/85 max-md:via-ink/40 max-md:to-ink/10"
+            className="absolute inset-x-0 top-48 h-24 bg-gradient-to-t from-ink to-transparent sm:top-56 md:inset-y-0 md:left-[38%] md:right-auto md:h-auto md:w-[24%] md:bg-gradient-to-r"
           />
-          <div className="flex min-h-[26rem] flex-col justify-end p-6 sm:p-8 md:min-h-[32rem] md:p-14">
+          <div className="relative flex flex-col justify-end p-6 sm:p-8 md:min-h-[34rem] md:max-w-[52%] md:p-14">
             <Eyebrow className="text-white/85">{bolivia.eyebrow}</Eyebrow>
             <h2
               id="bolivia-banner-title"
-              className="mt-5 max-w-2xl text-5xl leading-[0.98] md:text-7xl"
+              className="mt-5 max-w-2xl text-5xl leading-[0.98] lg:text-6xl"
             >
               {bolivia.title}
             </h2>
-            <p className="mt-6 max-w-lg text-lg leading-relaxed text-white/90">{bolivia.text}</p>
+            <p className="mt-6 max-w-lg text-lg md:max-w-md leading-relaxed text-white/90">{bolivia.text}</p>
             <ButtonLink href={href(locale, 'bolivia')} className="mt-10 self-start">
               {bolivia.cta}
             </ButtonLink>

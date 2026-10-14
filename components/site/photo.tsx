@@ -9,9 +9,18 @@ type PhotoProps = {
   sizes?: string
   priority?: boolean
   position?: string
+  imageClassName?: string
 }
 
-export function Photo({ src, alt, className, sizes = '100vw', priority, position }: PhotoProps) {
+export function Photo({
+  src,
+  alt,
+  className,
+  sizes = '100vw',
+  priority,
+  position,
+  imageClassName,
+}: PhotoProps) {
   return (
     <div className={cn('relative overflow-hidden bg-sand', className)}>
       <Image
@@ -20,7 +29,7 @@ export function Photo({ src, alt, className, sizes = '100vw', priority, position
         fill
         sizes={sizes}
         priority={priority}
-        className="object-cover"
+        className={cn('object-cover', imageClassName)}
         style={position ? { objectPosition: position } : undefined}
       />
     </div>
