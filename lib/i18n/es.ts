@@ -58,7 +58,7 @@ export const es = {
     hero: {
       brand: 'Come wonder with us.',
       title: 'Viajes para vivirlos. Fotos para recordarlos.',
-      text: 'Expediciones grupales a lugares extraordinarios, con Kelly detrás de la cámara.',
+      text: 'La mirada detrás de Wonderbound. Una forma de viajar que une exploración, sensibilidad visual y fotografía, para descubrir cada destino y conservar recuerdos que van más allá de una postal.',
       imageAlt:
         'Silueta de una mujer con sombrero sobre el Salar de Uyuni al atardecer, reflejada en el agua.',
     },
@@ -87,7 +87,7 @@ export const es = {
     bolivia: {
       eyebrow: 'Disponible para reservar · Marzo 2027',
       title: 'A la altura de los sueños',
-      text: 'Siete días por el Altiplano boliviano: Valle de la Luna, el Salar de Uyuni, lagunas de colores y volcanes, en grupo reducido y con Kelly detrás de la cámara.',
+      text: 'Siete días para descubrir otro mundo. Recorre el Valle de la Luna, el Salar de Uyuni, las lagunas del altiplano y paisajes volcánicos en una expedición de grupo reducido que combina aventura, descubrimiento y recuerdos profesionales del viaje.',
       cta: 'Ver expedición Bolivia 2027',
       imageAlt: 'Vehículo todoterreno blanco reflejado sobre el espejo de agua del Salar de Uyuni.',
     },

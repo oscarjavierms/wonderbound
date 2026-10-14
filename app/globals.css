@@ -84,7 +84,9 @@
   }
   p {
     text-align: justify;
-    hyphens: auto;
+    hyphens: none;
+    word-break: keep-all;
+    overflow-wrap: break-word;
   }
   ::selection {
     background: var(--terracotta);

@@ -9,7 +9,7 @@ export const boliviaEn: typeof boliviaEs = {
   hero: {
     title: 'Bolivia at the height of dreams',
     subtitle:
-      'An expedition across the Bolivian Altiplano: Valley of the Moon, Uyuni Salt Flat, lagoons, volcanoes and deserts.',
+      'Seven days to discover another world. Explore the Valley of the Moon, the Uyuni Salt Flat, the altiplano lagoons and volcanic landscapes on a small-group expedition that combines adventure, discovery and professional memories of the trip.',
     imageAlt: 'Kelly on the Uyuni Salt Flat under an intense blue sky, reflected in the water.',
     cta: 'Save my spot',
   },
@@ -22,8 +22,8 @@ export const boliviaEn: typeof boliviaEs = {
   },
   photos: {
     eyebrow: 'Photography',
-    title: "You'll come home with photos like these",
-    text: 'Kelly will take professional photos of you throughout the trip and share tips to get the most out of your camera or phone.',
+    title: 'Journeys worth remembering.',
+    text: 'Photography is part of how we explore the world. On every trip, you can take home professional memories of the landscapes and moments that make the experience unique.',
     carouselLabel: 'Photos from the Bolivia expedition',
     prev: 'Previous photos',
     next: 'Next photos',
@@ -100,7 +100,7 @@ export const boliviaEn: typeof boliviaEs = {
       '7 breakfasts and 4 lunches.',
       'Welcome and farewell dinners.',
       'Snacks on the salt flat.',
-      'Professional photos by Kelly: ten digital photographs per traveler.',
+      'A professional keepsake of your trip. Your experience includes a selection of 10 professional digital photographs, edited so you can keep and relive some of the moments of the journey.',
     ],
   },
   excludes: {
