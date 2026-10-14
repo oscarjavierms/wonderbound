@@ -7,7 +7,7 @@ export const boliviaEs = {
   hero: {
     title: 'Bolivia a la altura de los sueños',
     subtitle:
-      'Una expedición por el Altiplano boliviano: Valle de la Luna, Salar de Uyuni, lagunas, volcanes y desiertos.',
+      'Siete días para descubrir otro mundo. Recorre el Valle de la Luna, el Salar de Uyuni, las lagunas del altiplano y paisajes volcánicos en una expedición de grupo reducido que combina aventura, descubrimiento y recuerdos profesionales del viaje.',
     imageAlt: 'Kelly sobre el Salar de Uyuni bajo un cielo azul intenso, con su reflejo en el agua.',
     cta: 'Quiero mi cupo',
   },
@@ -21,8 +21,8 @@ export const boliviaEs = {
   },
   photos: {
     eyebrow: 'Fotografía',
-    title: 'Volverás con fotos así',
-    text: 'Kelly te tomará fotos profesionales durante el viaje y te compartirá tips para sacar el máximo provecho a tu cámara o celular.',
+    title: 'Viajes que merecen ser recordados.',
+    text: 'La fotografía forma parte de nuestra manera de explorar el mundo. En cada viaje, podrás llevarte recuerdos profesionales de los paisajes y momentos que hacen única la experiencia.',
     carouselLabel: 'Fotos de la expedición a Bolivia',
     prev: 'Fotos anteriores',
     next: 'Fotos siguientes',
@@ -99,7 +99,7 @@ export const boliviaEs = {
       '7 desayunos y 4 almuerzos.',
       'Cenas de bienvenida y de despedida.',
       'Snacks en el Salar.',
-      'Fotos profesionales por Kelly: diez fotografías digitales por viajero.',
+      'Un recuerdo profesional de tu viaje. Tu experiencia incluye una selección de 10 fotografías digitales profesionales, editadas para que puedas conservar y revivir algunos de los momentos del recorrido.',
     ],
   },
   excludes: {

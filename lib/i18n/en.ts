@@ -59,7 +59,7 @@ export const en: Dictionary = {
     hero: {
       brand: 'Come wonder with us.',
       title: 'Journeys to live. Photos to remember.',
-      text: 'Group expeditions to extraordinary places, with Kelly behind the camera.',
+      text: 'The vision behind Wonderbound. A way of traveling that blends exploration, visual sensitivity and photography, to discover each destination and keep memories that go beyond a postcard.',
       imageAlt:
         'Silhouette of a woman in a hat on the Uyuni Salt Flat at sunset, reflected in the water.',
     },
@@ -88,7 +88,7 @@ export const en: Dictionary = {
     bolivia: {
       eyebrow: 'Available to book · March 2027',
       title: 'At the height of dreams',
-      text: 'Seven days across the Bolivian Altiplano: Valley of the Moon, the Uyuni Salt Flat, colorful lagoons and volcanoes, in a small group with Kelly behind the camera.',
+      text: 'Seven days to discover another world. Explore the Valley of the Moon, the Uyuni Salt Flat, the altiplano lagoons and volcanic landscapes on a small-group expedition that combines adventure, discovery and professional memories of the trip.',
       cta: 'See the Bolivia 2027 expedition',
       imageAlt: 'White off-road vehicle reflected on the mirror-like water of the Uyuni Salt Flat.',
     },
