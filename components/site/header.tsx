@@ -3,9 +3,11 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
-import { ChevronDown, Menu, X } from 'lucide-react'
+import { ChevronDown, Menu } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { InstagramLink } from '@/components/site/instagram-link'
+import { LanguageSwitcher } from '@/components/site/language-switcher'
+import { MobileNav } from '@/components/site/mobile-nav'
 import { social } from '@/lib/site'
 import type { Locale } from '@/lib/i18n/config'
 
@@ -33,6 +35,7 @@ const linkClass =
 export function Header({ locale, labels }: HeaderProps) {
   const pathname = usePathname()
   const [open, setOpen] = useState(false)
+  const menuButtonRef = useRef<HTMLButtonElement>(null)
 
   const rest = pathname.replace(new RegExp(`^/${locale}`), '') || ''
   const onExpeditions = rest.startsWith('/expeditions') || rest.endsWith('/bolivia-2027')
@@ -45,9 +48,9 @@ export function Header({ locale, labels }: HeaderProps) {
 
   const { atTop, hidden } = useSmartNavbar(pathname)
   const hasDarkHero = rest === '' || rest.endsWith('/bolivia-2027')
-  const transparent = atTop && !open
+  const transparent = atTop
   const lightText = transparent && hasDarkHero
-  const isHidden = hidden && !open
+  const isHidden = hidden
 
   useEffect(() => {
     setOpen(false)
@@ -77,11 +80,7 @@ export function Header({ locale, labels }: HeaderProps) {
       <header
         className={cn(
           'fixed inset-x-0 top-0 z-[100] w-full transition-[transform,background-color,color,box-shadow,backdrop-filter] duration-300 ease-out',
-          open
-            ? 'bg-white shadow-none'
-            : transparent
-              ? 'bg-transparent shadow-none'
-              : 'bg-white/80 shadow-sm backdrop-blur-md',
+          transparent ? 'bg-transparent shadow-none' : 'bg-white/80 shadow-sm backdrop-blur-md',
           lightText ? 'text-white' : 'text-[#111111]',
           isHidden && '-translate-y-full',
         )}
@@ -138,67 +137,29 @@ export function Header({ locale, labels }: HeaderProps) {
               <LanguageSwitcher locale={locale} rest={rest} label={labels.language} />
             </div>
             <button
+              ref={menuButtonRef}
               type="button"
               className="-mr-2 inline-flex size-10 items-center justify-center lg:hidden"
               aria-expanded={open}
               aria-controls="mobile-menu"
-              aria-label={open ? labels.closeMenu : labels.openMenu}
-              onClick={() => setOpen((value) => !value)}
+              aria-haspopup="dialog"
+              aria-label={labels.openMenu}
+              onClick={() => setOpen(true)}
             >
-              {open ? <X aria-hidden="true" className="size-6" /> : <Menu aria-hidden="true" className="size-6" />}
+              <Menu aria-hidden="true" className="size-6" />
             </button>
           </div>
         </div>
       </header>
 
-      {open && (
-        <div
-          id="mobile-menu"
-          className="fixed inset-0 z-[90] overflow-y-auto bg-white px-6 pb-10 pt-24 text-[#111111] lg:hidden"
-        >
-          <nav aria-label={labels.mainNav} className="flex flex-col">
-            <MobileLink
-              href={homeLink.href}
-              active={homeLink.active}
-              onNavigate={() => setOpen(false)}
-            >
-              {homeLink.label}
-            </MobileLink>
-            <MobileLink
-              href={`/${locale}/expeditions`}
-              active={rest.startsWith('/expeditions')}
-              onNavigate={() => setOpen(false)}
-              borderless
-            >
-              {labels.expeditions}
-            </MobileLink>
-            <Link
-              href={`/${locale}/salidas-grupales/bolivia-2027`}
-              onClick={() => setOpen(false)}
-              aria-current={rest.endsWith('/bolivia-2027') ? 'page' : undefined}
-              className="-mt-1 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-b border-black/10 pb-5 pl-5"
-            >
-              <span className="font-display text-2xl italic">{labels.bolivia}</span>
-              <span className="text-[0.62rem] uppercase tracking-[0.16em] text-black/55">
-                {labels.boliviaMeta}
-              </span>
-            </Link>
-            {links.map((link) => (
-              <MobileLink
-                key={link.href}
-                href={link.href}
-                active={link.active}
-                onNavigate={() => setOpen(false)}
-              >
-                {link.label}
-              </MobileLink>
-            ))}
-          </nav>
-          <div className="mt-10 sm:hidden">
-            <LanguageSwitcher locale={locale} rest={rest} label={labels.language} />
-          </div>
-        </div>
-      )}
+      <MobileNav
+        open={open}
+        onClose={() => setOpen(false)}
+        locale={locale}
+        rest={rest}
+        returnFocusRef={menuButtonRef}
+        labels={labels}
+      />
     </>
   )
 }
@@ -257,35 +218,6 @@ function useSmartNavbar(pathname: string) {
   }, [pathname])
 
   return { atTop, hidden }
-}
-
-function MobileLink({
-  href,
-  active,
-  onNavigate,
-  borderless,
-  children,
-}: {
-  href: string
-  active: boolean
-  onNavigate: () => void
-  borderless?: boolean
-  children: React.ReactNode
-}) {
-  return (
-    <Link
-      href={href}
-      onClick={onNavigate}
-      aria-current={active ? 'page' : undefined}
-      className={cn(
-        'py-5 font-display text-3xl leading-tight',
-        !borderless && 'border-b border-black/10',
-        active && 'italic',
-      )}
-    >
-      {children}
-    </Link>
-  )
 }
 
 function GroupDeparturesMenu({
@@ -393,35 +325,6 @@ function GroupDeparturesMenu({
           </ul>
         </div>
       </div>
-    </div>
-  )
-}
-
-function LanguageSwitcher({ locale, rest, label }: { locale: Locale; rest: string; label: string }) {
-  const options: { code: Locale; text: string; name: string }[] = [
-    { code: 'es', text: 'ES', name: 'Español' },
-    { code: 'en', text: 'EN', name: 'English' },
-  ]
-  return (
-    <div role="group" aria-label={label} className="eyebrow flex items-center gap-1.5 text-xs">
-      {options.map((option, index) => (
-        <span key={option.code} className="flex items-center gap-1.5">
-          {index > 0 && <span aria-hidden="true" className="opacity-40">/</span>}
-          <Link
-            href={`/${option.code}${rest}`}
-            hrefLang={option.code}
-            lang={option.code}
-            aria-label={option.name}
-            aria-current={option.code === locale ? 'true' : undefined}
-            className={cn(
-              'py-1 transition-opacity',
-              option.code === locale ? 'border-b border-current' : 'opacity-50 hover:opacity-100',
-            )}
-          >
-            {option.text}
-          </Link>
-        </span>
-      ))}
     </div>
   )
 }
