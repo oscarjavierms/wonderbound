@@ -61,12 +61,10 @@ export function MobileNav({ open, onClose, locale, rest, returnFocusRef, labels 
     }
   }
 
-  const mainLinks = [
+  const links = [
     { href: `/${locale}`, label: labels.home, active: rest === '' },
-    { href: `/${locale}/expeditions`, label: labels.expeditions, active: rest.startsWith('/expeditions') },
-  ]
-  const trailingLinks = [
     { href: `/${locale}/destinations`, label: labels.destinations, active: rest.startsWith('/destinations') },
+    { href: `/${locale}/expeditions`, label: labels.expeditions, active: rest.startsWith('/expeditions') },
     { href: `/${locale}/about`, label: labels.about, active: rest.startsWith('/about') },
   ]
   const boliviaActive = rest.endsWith('/bolivia-2027')
@@ -90,7 +88,7 @@ export function MobileNav({ open, onClose, locale, rest, returnFocusRef, labels 
         aria-label={labels.closeMenu}
         onClick={onClose}
         className={cn(
-          'absolute inset-0 bg-black/30 transition-opacity duration-300 motion-reduce:transition-none',
+          'absolute inset-0 bg-black/20 transition-opacity duration-300 motion-reduce:transition-none',
           open ? 'opacity-100' : 'opacity-0',
         )}
       />
@@ -98,95 +96,63 @@ export function MobileNav({ open, onClose, locale, rest, returnFocusRef, labels 
       <div
         ref={panelRef}
         className={cn(
-          'absolute inset-y-0 right-0 flex w-[80%] max-w-[340px] flex-col overflow-y-auto bg-[#FBFBFB] text-neutral-900 shadow-[-24px_0_48px_-24px_rgba(17,17,17,0.25)]',
-          'transition-transform duration-300 ease-out motion-reduce:transition-none',
-          open ? 'translate-x-0' : 'translate-x-full',
+          'absolute inset-x-0 top-0 mx-auto mt-[max(0.5rem,env(safe-area-inset-top))] max-h-[calc(100dvh-1rem)] w-full max-w-[92%] overflow-y-auto rounded-2xl p-6',
+          'border border-white/10 bg-neutral-900/80 text-white shadow-2xl shadow-black/30 backdrop-blur-md',
+          'transition-[opacity,transform] duration-300 ease-out motion-reduce:transition-none',
+          open ? 'translate-y-0 opacity-100' : '-translate-y-3 opacity-0',
         )}
       >
-        <div className="flex items-start justify-between px-7 pt-10">
-          <Link
-            href={`/${locale}`}
-            onClick={onClose}
-            className="flex flex-col leading-none focus-visible:outline-2 focus-visible:outline-offset-4"
-          >
-            <span className="font-display text-2xl tracking-tight">Wonderbound</span>
-            <span className="eyebrow mt-1 text-[0.6rem] tracking-[0.38em] text-neutral-500">Journeys</span>
-          </Link>
-          <button
-            ref={closeRef}
-            type="button"
-            aria-label={labels.closeMenu}
-            onClick={onClose}
-            className="-mr-2 -mt-1 inline-flex size-10 items-center justify-center text-neutral-900 transition-opacity hover:opacity-60 focus-visible:outline-2 focus-visible:outline-offset-2"
-          >
-            <X aria-hidden="true" className="size-5" strokeWidth={1.5} />
-          </button>
-        </div>
+        <button
+          ref={closeRef}
+          type="button"
+          aria-label={labels.closeMenu}
+          onClick={onClose}
+          className="absolute right-2 top-2 inline-flex size-9 items-center justify-center text-white/80 transition-opacity hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2"
+        >
+          <X aria-hidden="true" className="size-4" strokeWidth={1.5} />
+        </button>
 
-        <nav aria-label={labels.mainNav} className="mt-14 flex flex-col gap-7 px-7">
-          {mainLinks.map((link) => (
-            <PanelLink key={link.href} href={link.href} active={link.active} onNavigate={onClose}>
+        <nav aria-label={labels.mainNav} className="grid grid-cols-[auto_auto] justify-between gap-x-3 gap-y-3.5">
+          {links.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={onClose}
+              aria-current={link.active ? 'page' : undefined}
+              className={cn(
+                'whitespace-nowrap font-display text-[0.9rem] leading-6 text-white/90 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4',
+                link.active && 'italic text-white',
+              )}
+            >
               {link.label}
-            </PanelLink>
+            </Link>
           ))}
 
           <Link
             href={`/${locale}/salidas-grupales/bolivia-2027`}
             onClick={onClose}
             aria-current={boliviaActive ? 'page' : undefined}
-            className="-mt-3 ml-1 flex flex-col gap-1 border-l border-neutral-900/15 pl-5 focus-visible:outline-2 focus-visible:outline-offset-4"
+            className="col-span-2 mt-0.5 flex flex-wrap items-baseline justify-between gap-x-3 gap-y-0.5 border-t border-white/10 pt-3.5 focus-visible:outline-2 focus-visible:outline-offset-4"
           >
-            <span className={cn('font-display text-xl text-neutral-900', boliviaActive && 'italic')}>
+            <span className={cn('font-display text-[0.95rem] leading-6 text-white', boliviaActive && 'italic')}>
               {labels.bolivia}
             </span>
-            <span className="text-xs uppercase tracking-[0.14em] text-neutral-500">{labels.boliviaMeta}</span>
+            <span className="text-[0.62rem] uppercase tracking-[0.12em] text-white/55">{labels.boliviaMeta}</span>
           </Link>
-
-          {trailingLinks.map((link) => (
-            <PanelLink key={link.href} href={link.href} active={link.active} onNavigate={onClose}>
-              {link.label}
-            </PanelLink>
-          ))}
         </nav>
 
-        <div className="mt-auto flex items-center justify-between gap-4 border-t border-neutral-900/10 px-7 pb-[max(2rem,env(safe-area-inset-bottom))] pt-6 text-neutral-900">
-          <LanguageSwitcher locale={locale} rest={rest} label={labels.language} />
+        <div className="mt-4 flex items-center justify-between gap-3 border-t border-white/10 pt-3">
+          <LanguageSwitcher locale={locale} rest={rest} label={labels.language} className="text-[0.7rem] text-white" />
           <InstagramLink
             href={social.agencyInstagram}
             label={labels.instagram}
-            className="size-auto gap-2 py-1 text-neutral-500 hover:opacity-100 hover:text-neutral-900"
-            iconClassName="size-4"
+            className="size-auto gap-1.5 py-1 text-white/60 hover:text-white hover:opacity-100"
+            iconClassName="size-3.5"
           >
-            <span className="text-xs tracking-wide">{INSTAGRAM_HANDLE}</span>
+            <span className="text-[0.7rem] tracking-wide">{INSTAGRAM_HANDLE}</span>
           </InstagramLink>
         </div>
       </div>
     </div>
-  )
-}
-
-function PanelLink({
-  href,
-  active,
-  onNavigate,
-  children,
-}: {
-  href: string
-  active: boolean
-  onNavigate: () => void
-  children: React.ReactNode
-}) {
-  return (
-    <Link
-      href={href}
-      onClick={onNavigate}
-      aria-current={active ? 'page' : undefined}
-      className={cn(
-        'font-display text-xl text-neutral-900 focus-visible:outline-2 focus-visible:outline-offset-4',
-        active && 'italic',
-      )}
-    >
-      {children}
-    </Link>
   )
 }
