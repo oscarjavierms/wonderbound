@@ -109,8 +109,23 @@
   }
 }
 
+.hero-copy {
+  text-shadow: 0 1px 14px rgb(0 0 0 / 0.5);
+}
+
+.site-emblem {
+  display: block;
+  background-color: currentColor;
+  -webkit-mask: url('/images/emblema-montanas.png') center / contain no-repeat;
+  mask: url('/images/emblema-montanas.png') center / contain no-repeat;
+  transition: background-color 0.3s ease-out;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+  .site-emblem {
+    transition: none;
   }
 }
