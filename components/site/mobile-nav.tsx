@@ -6,6 +6,7 @@ import { X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { InstagramLink } from '@/components/site/instagram-link'
 import { LanguageSwitcher } from '@/components/site/language-switcher'
+import { SiteLogo } from '@/components/site/site-logo'
 import { social } from '@/lib/site'
 import type { Locale } from '@/lib/i18n/config'
 
@@ -93,10 +94,10 @@ export function MobileNav({ open, onClose, locale, rest, returnFocusRef, labels 
           <Link
             href={`/${locale}`}
             onClick={onClose}
-            className="flex flex-col leading-none focus-visible:outline-2 focus-visible:outline-offset-4"
+            aria-label="Wonderbound Journeys"
+            className="flex items-center focus-visible:outline-2 focus-visible:outline-offset-4"
           >
-            <span className="font-display text-2xl tracking-tight text-neutral-900">Wonderbound</span>
-            <span className="eyebrow mt-1 text-[0.6rem] tracking-[0.38em] text-neutral-900/75">Journeys</span>
+            <SiteLogo />
           </Link>
           <button
             ref={closeRef}
