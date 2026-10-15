@@ -125,6 +125,13 @@
   html {
     scroll-behavior: auto;
   }
+  /* Screen blending keeps the title lighter than the photo while letting the warm water tones tint the letters. */
+  .hero-title {
+  color: rgb(255 250 244 / 0.88);
+  mix-blend-mode: screen;
+  text-shadow: 0 0 36px rgb(255 190 140 / 0.35);
+  }
+
   .site-emblem {
     transition: none;
   }
