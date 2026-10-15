@@ -13,7 +13,7 @@ export function SiteLogo({ light = false, className }: SiteLogoProps) {
   return (
     <span
       className={cn(
-        'relative block aspect-[1000/906] h-[3.25rem] shrink-0 md:h-16',
+        'relative block aspect-[1000/906] h-[4.25rem] shrink-0 md:h-20',
         className,
       )}
     >
@@ -21,7 +21,7 @@ export function SiteLogo({ light = false, className }: SiteLogoProps) {
         src="/images/logo-color.png"
         alt=""
         fill
-        sizes="72px"
+        sizes="96px"
         loading="eager"
         className={cn(imageClass, light ? 'opacity-0' : 'opacity-100')}
       />
@@ -29,7 +29,7 @@ export function SiteLogo({ light = false, className }: SiteLogoProps) {
         src="/images/logo-blanco.png"
         alt=""
         fill
-        sizes="72px"
+        sizes="96px"
         loading="eager"
         className={cn(imageClass, light ? 'opacity-100' : 'opacity-0')}
       />
