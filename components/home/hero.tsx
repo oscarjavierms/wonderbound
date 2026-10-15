@@ -1,5 +1,3 @@
-import Image from 'next/image'
-import { HeroStage } from '@/components/home/hero-stage'
 import { Photo } from '@/components/site/photo'
 import { getDictionary, type Locale } from '@/lib/i18n/config'
 import { photos } from '@/lib/site'
@@ -8,7 +6,7 @@ export function Hero({ locale }: { locale: Locale }) {
   const dict = getDictionary(locale)
   const { brand, title, text, imageAlt } = dict.home.hero
   return (
-    <HeroStage className="relative isolate flex min-h-svh w-full items-center justify-center overflow-hidden text-white">
+    <section className="relative isolate flex min-h-svh w-full items-center justify-center overflow-hidden text-white">
       <Photo
         src={photos.sunsetPurple.src}
         alt={imageAlt}
@@ -25,32 +23,18 @@ export function Hero({ locale }: { locale: Locale }) {
         aria-hidden="true"
         className="absolute inset-0 -z-20 bg-[radial-gradient(ellipse_at_center,rgb(0_0_0/0.35),transparent_70%)]"
       />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center"
-      >
-        <div className="hero-emblem w-[125%] max-w-[1000px] opacity-40">
-          <Image
-            src="/images/emblema-montanas.png"
-            alt=""
-            width={1774}
-            height={887}
-            sizes="(min-width: 1024px) 1000px, 125vw"
-            className="h-auto w-full"
-          />
-        </div>
-      </div>
 
-      <div className="relative mx-auto flex w-full max-w-5xl flex-col items-center px-5 pb-16 pt-28 text-center">
-        <div className="font-display text-[2.75rem] italic leading-[0.95] sm:text-7xl md:text-8xl lg:text-9xl">
-          <h1 className="hero-title">{brand}</h1>
-          <div aria-hidden="true" className="pointer-events-none h-[0.9em] select-none overflow-hidden">
-            <p className="hero-reflection">{brand}</p>
-          </div>
-        </div>
-        <h2 className="hero-copy mt-6 max-w-md text-lg leading-snug sm:text-2xl">{title}</h2>
-        <p className="hero-copy mt-4 max-w-md text-base leading-relaxed text-white/90">{text}</p>
+      <div className="relative mx-auto flex w-full max-w-5xl flex-col items-center px-6 py-24 text-center">
+        <h1 className="hero-copy text-balance font-display text-[2.75rem] font-medium leading-[1.02] tracking-tight sm:text-7xl md:text-8xl lg:text-9xl">
+          {brand}
+        </h1>
+        <p className="hero-copy mt-8 max-w-md text-balance text-center text-lg leading-snug sm:mt-10 sm:text-2xl">
+          {title}
+        </p>
+        <p className="hero-copy mt-5 max-w-md text-balance text-center text-base leading-relaxed text-white/90">
+          {text}
+        </p>
       </div>
-    </HeroStage>
+    </section>
   )
 }
