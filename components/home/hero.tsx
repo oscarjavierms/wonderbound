@@ -17,23 +17,26 @@ export function Hero({ locale }: { locale: Locale }) {
       />
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-20 bg-gradient-to-t from-black/60 via-black/30 to-black/35"
+        className="absolute inset-0 -z-20 bg-gradient-to-t from-black/65 via-black/25 to-black/35"
       />
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-20 bg-[radial-gradient(ellipse_at_center,rgb(0_0_0/0.35),transparent_70%)]"
+        className="absolute inset-0 -z-20 bg-[radial-gradient(ellipse_at_center,rgb(0_0_0/0.3),transparent_70%)]"
       />
 
-      <div className="relative mx-auto flex w-full max-w-5xl flex-col items-center px-6 py-24 text-center">
-        <h1 className="hero-copy text-balance font-display text-[2.75rem] font-medium leading-[1.02] tracking-tight sm:text-7xl md:text-8xl lg:text-9xl">
-          {brand}
-        </h1>
-        <p className="hero-copy mt-8 max-w-md text-balance text-center text-lg leading-snug sm:mt-10 sm:text-2xl">
-          {title}
-        </p>
-        <p className="hero-copy mt-5 max-w-md text-balance text-center text-base leading-relaxed text-white/90">
-          {text}
-        </p>
+      <h1 className="hero-title mx-auto max-w-5xl px-6 pb-32 pt-24 text-center font-display text-[3rem] font-normal italic leading-[1.02] tracking-tight sm:pb-24 sm:text-7xl md:text-8xl lg:text-9xl">
+        {brand}
+      </h1>
+
+      <div className="absolute inset-x-0 bottom-0 pb-8 pl-6 pr-24 sm:px-10 sm:pb-12 lg:px-16">
+        <div className="max-w-sm text-left">
+          <p className="hero-copy text-pretty text-left text-base font-medium leading-snug sm:text-lg">
+            {title}
+          </p>
+          <p className="hero-copy mt-2 text-pretty text-left text-sm leading-relaxed text-white/80">
+            {text}
+          </p>
+        </div>
       </div>
     </section>
   )
