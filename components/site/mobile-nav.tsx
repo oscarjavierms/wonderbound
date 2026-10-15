@@ -90,7 +90,7 @@ export function MobileNav({ open, onClose, locale, rest, returnFocusRef, labels 
           open ? 'opacity-100' : 'opacity-0',
         )}
       >
-        <div className="absolute inset-x-0 top-[env(safe-area-inset-top)] flex h-16 items-center justify-between gap-4 px-8">
+        <div className="absolute inset-x-0 top-[env(safe-area-inset-top)] flex h-[5.25rem] items-center md:h-24 justify-between gap-4 px-8">
           <Link
             href={`/${locale}`}
             onClick={onClose}
@@ -110,7 +110,7 @@ export function MobileNav({ open, onClose, locale, rest, returnFocusRef, labels 
           </button>
         </div>
 
-        <nav aria-label={labels.mainNav} className="flex-1 px-8 pb-8 pt-24">
+        <nav aria-label={labels.mainNav} className="flex-1 px-8 pb-8 pt-28">
           <ul className="space-y-6 text-left">
             <li>
               <Link

@@ -86,7 +86,7 @@ export function Header({ locale, labels }: HeaderProps) {
           isHidden && '-translate-y-full',
         )}
       >
-        <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between gap-4 px-5 md:h-20 md:px-8">
+        <div className="mx-auto flex h-[5.25rem] w-full max-w-7xl items-center justify-between gap-4 px-5 md:h-24 md:px-8">
           <Link
             href={`/${locale}`}
             aria-label="Wonderbound Journeys"
