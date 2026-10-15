@@ -82,7 +82,7 @@ export function Header({ locale, labels }: HeaderProps) {
         className={cn(
           'fixed inset-x-0 top-0 z-[100] w-full transition-[transform,background-color,color,box-shadow,backdrop-filter] duration-300 ease-out',
           transparent ? 'bg-transparent shadow-none' : 'bg-[#FBFBFB]/90 shadow-sm backdrop-blur-md',
-          lightText ? 'text-white' : 'text-[#111111]',
+          lightText ? 'text-white' : 'text-[#1C1C1C]',
           isHidden && '-translate-y-full',
         )}
       >
@@ -93,7 +93,7 @@ export function Header({ locale, labels }: HeaderProps) {
             className="flex items-center focus-visible:outline-2 focus-visible:outline-offset-4"
             onClick={() => setOpen(false)}
           >
-            <SiteLogo light={lightText} />
+            <SiteLogo />
           </Link>
 
           <nav aria-label={labels.mainNav} className="hidden items-center gap-10 lg:flex">

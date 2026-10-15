@@ -1,35 +1,56 @@
+import Image from 'next/image'
+import { HeroStage } from '@/components/home/hero-stage'
 import { Photo } from '@/components/site/photo'
-import { Container } from '@/components/site/ui'
 import { getDictionary, type Locale } from '@/lib/i18n/config'
 import { photos } from '@/lib/site'
 
 export function Hero({ locale }: { locale: Locale }) {
   const dict = getDictionary(locale)
+  const { brand, title, text, imageAlt } = dict.home.hero
   return (
-    <section className="relative isolate flex min-h-screen w-full items-end overflow-hidden text-white">
+    <HeroStage className="relative isolate flex min-h-svh w-full items-center justify-center overflow-hidden text-white">
       <Photo
         src={photos.sunsetPurple.src}
-        alt={dict.home.hero.imageAlt}
-        className="absolute inset-0 -z-10"
+        alt={imageAlt}
+        className="absolute inset-0 -z-30"
         imageClassName="object-[center_30%] md:object-[center_32%]"
         sizes="100vw"
         priority
       />
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-gradient-to-t from-black/60 via-black/20 to-black/25"
+        className="absolute inset-0 -z-20 bg-gradient-to-t from-black/60 via-black/30 to-black/35"
       />
-      <Container className="pb-28 pt-32 md:pb-20">
-        <div className="max-w-sm">
-          <h1 className="font-display text-5xl italic leading-[0.98] sm:text-6xl">
-            {dict.home.hero.brand}
-          </h1>
-          <h2 className="mt-5 text-xl leading-snug sm:text-2xl">{dict.home.hero.title}</h2>
-          <p className="mt-4 text-left text-base leading-relaxed text-white/90">
-            {dict.home.hero.text}
-          </p>
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 -z-20 bg-[radial-gradient(ellipse_at_center,rgb(0_0_0/0.35),transparent_70%)]"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center"
+      >
+        <div className="hero-emblem w-[125%] max-w-[1000px] opacity-40">
+          <Image
+            src="/images/emblema-montanas.png"
+            alt=""
+            width={1774}
+            height={887}
+            sizes="(min-width: 1024px) 1000px, 125vw"
+            className="h-auto w-full"
+          />
         </div>
-      </Container>
-    </section>
+      </div>
+
+      <div className="relative mx-auto flex w-full max-w-5xl flex-col items-center px-5 pb-16 pt-28 text-center">
+        <div className="font-display text-[2.75rem] italic leading-[0.95] sm:text-7xl md:text-8xl lg:text-9xl">
+          <h1 className="hero-title">{brand}</h1>
+          <div aria-hidden="true" className="pointer-events-none h-[0.9em] select-none overflow-hidden">
+            <p className="hero-reflection">{brand}</p>
+          </div>
+        </div>
+        <h2 className="hero-copy mt-6 max-w-md text-lg leading-snug sm:text-2xl">{title}</h2>
+        <p className="hero-copy mt-4 max-w-md text-base leading-relaxed text-white/90">{text}</p>
+      </div>
+    </HeroStage>
   )
 }
