@@ -8,6 +8,7 @@ import { cn } from '@/lib/utils'
 import { InstagramLink } from '@/components/site/instagram-link'
 import { LanguageSwitcher } from '@/components/site/language-switcher'
 import { MobileNav } from '@/components/site/mobile-nav'
+import { SiteLogo } from '@/components/site/site-logo'
 import { social } from '@/lib/site'
 import type { Locale } from '@/lib/i18n/config'
 
@@ -80,7 +81,7 @@ export function Header({ locale, labels }: HeaderProps) {
       <header
         className={cn(
           'fixed inset-x-0 top-0 z-[100] w-full transition-[transform,background-color,color,box-shadow,backdrop-filter] duration-300 ease-out',
-          transparent ? 'bg-transparent shadow-none' : 'bg-white/80 shadow-sm backdrop-blur-md',
+          transparent ? 'bg-transparent shadow-none' : 'bg-[#FBFBFB]/90 shadow-sm backdrop-blur-md',
           lightText ? 'text-white' : 'text-[#111111]',
           isHidden && '-translate-y-full',
         )}
@@ -88,18 +89,11 @@ export function Header({ locale, labels }: HeaderProps) {
         <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between gap-4 px-5 md:h-20 md:px-8">
           <Link
             href={`/${locale}`}
-            className="flex flex-col leading-none focus-visible:outline-2 focus-visible:outline-offset-4"
+            aria-label="Wonderbound Journeys"
+            className="flex items-center focus-visible:outline-2 focus-visible:outline-offset-4"
             onClick={() => setOpen(false)}
           >
-            <span className="font-display text-2xl tracking-tight md:text-[1.75rem]">Wonderbound</span>
-            <span
-              className={cn(
-                'eyebrow mt-1 text-[0.6rem] tracking-[0.38em] transition-colors duration-300',
-                lightText ? 'text-white/75' : 'text-muted-foreground',
-              )}
-            >
-              Journeys
-            </span>
+            <SiteLogo light={lightText} />
           </Link>
 
           <nav aria-label={labels.mainNav} className="hidden items-center gap-10 lg:flex">
