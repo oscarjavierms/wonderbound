@@ -60,6 +60,7 @@ export const en: Dictionary = {
       brand: 'Come wonder with us.',
       title: 'Journeys to live. Photos to remember.',
       text: 'Exploration, visual sensitivity and professional memories that go beyond a postcard.',
+      cta: 'View upcoming expeditions',
       imageAlt:
         'Silhouette of a woman in a hat on the Uyuni Salt Flat at sunset, reflected in the water.',
     },
