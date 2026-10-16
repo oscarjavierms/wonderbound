@@ -95,6 +95,20 @@ export default async function LocaleLayout({
             })(window, document, "clarity", "script", "yycq2cotuz");
           `}
         </Script>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-K57NX0ZEMP"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-K57NX0ZEMP', {
+              page_path: window.location.pathname,
+            });
+          `}
+        </Script>
       </body>
     </html>
   )
