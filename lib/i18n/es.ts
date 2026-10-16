@@ -59,6 +59,7 @@ export const es = {
       brand: 'Come wonder with us.',
       title: 'Viajes para vivirlos. Fotos para recordarlos.',
       text: 'Exploración, sensibilidad visual y recuerdos profesionales que van más allá de una postal.',
+      cta: 'Ver próximas expediciones',
       imageAlt:
         'Silueta de una mujer con sombrero sobre el Salar de Uyuni al atardecer, reflejada en el agua.',
     },
