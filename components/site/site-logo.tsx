@@ -12,7 +12,7 @@ export function SiteLogo({ className }: SiteLogoProps) {
         className,
       )}
     >
-      <span aria-hidden="true" className="site-emblem h-7 w-14 shrink-0 md:h-8 md:w-16" />
+      <span aria-hidden="true" className="site-emblem h-[2.0125rem] w-[4.025rem] shrink-0 md:h-8 md:w-16" />
       <span className="flex flex-col items-start leading-none">
         <span className="font-display text-[1.75rem] font-medium tracking-tight md:text-[2rem]">
           Wonderbound
