@@ -12,12 +12,12 @@ export function SiteLogo({ className }: SiteLogoProps) {
         className,
       )}
     >
-      <span aria-hidden="true" className="site-emblem h-6 w-12 shrink-0 md:h-8 md:w-16" />
+      <span aria-hidden="true" className="site-emblem h-7 w-14 shrink-0 md:h-8 md:w-16" />
       <span className="flex flex-col items-start leading-none">
-        <span className="font-display text-[1.5rem] font-medium tracking-tight md:text-[2rem]">
+        <span className="font-display text-[1.75rem] font-medium tracking-tight md:text-[2rem]">
           Wonderbound
         </span>
-        <span className="mt-1.5 font-sans text-[0.5625rem] font-medium uppercase tracking-[0.5em] md:text-[0.6875rem]">
+        <span className="mt-1.5 font-sans text-[0.65rem] font-medium uppercase tracking-[0.5em] md:text-[0.6875rem]">
           Journeys
         </span>
       </span>

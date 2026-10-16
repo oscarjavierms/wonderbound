@@ -38,7 +38,7 @@ export function Hero({ locale }: { locale: Locale }) {
             {text}
           </p>
           <Link
-            href={`/${locale}/expeditions`}
+            href={`/${locale}/destinos`}
             className="mt-5 inline-flex min-h-11 items-center justify-center border border-white/60 bg-black/15 px-5 py-3 text-[11px] font-medium uppercase tracking-[0.2em] text-white backdrop-blur-sm transition-colors duration-300 hover:border-white hover:bg-white hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
           >
             {cta}
